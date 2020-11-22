@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <?php
+            include_once("header.html");
+        ?>
+    </header>
 </body>
 </html>

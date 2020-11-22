@@ -19,7 +19,7 @@
 <body>
     <header>
         <?php
-            include_once("php/header.html");
+            include_once("header.html");
         ?>
     </header>
     <main>
