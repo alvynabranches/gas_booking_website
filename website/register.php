@@ -38,7 +38,7 @@
                 <div class="form-group"><input class="form-control" type="text" placeholder="User Name" required="" name="username"></div>
                 <div class="form-group"><input class="form-control" type="email" placeholder="Email" required="" name="email"></div>
                 <div class="form-group"><input class="form-control" type="password" placeholder="Password" required="" name="password"></div>
-                <div class="form-group"><select class="form-control" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php ?></select></div>
+                <div class="form-group"><select class="form-control" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php include_once('config.php');$sql="select * from location;";$result=mysqli_query($con,$sql);while($row=mysqli_fetch_assoc($result)){echo "<option value='".$row['location_id']."'>".$row['location_name']."</option>";}?></select></div>
                 <div class="form-group"><select class="form-control" required=""><option value="" selected="">Type</option><option value="non-commercial">Non-Commercial</option><option value="commercial">Commercial</option></select></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
             </form>
