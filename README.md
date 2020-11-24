@@ -14,6 +14,8 @@
 
 ### <b>Queries Used</b>
 
+#### <b>MySQL</b>
+
 CREATE TABLE gas(gas_id int PRIMARY KEY AUTO_INCREMENT, gas_name varchar(64), gas_type varchar(32));
 
 CREATE TABLE location(location_id int PRIMARY KEY AUTO_INCREMENT, location_name varchar(128));
@@ -24,3 +26,9 @@ CREATE TABLE booking(booking_id int PRIMARY KEY AUTO_INCREMENT, booking_date dat
 
 CREATE TABLE payment(payment_id int PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id int, delivery_address varchar(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
 
+#### <b>PostgreSQL</b>
+
+CREATE TABLE gas(gas_id int PRIMARY KEY AUTO_INCREMENT, gas_name varchar(64), gas_type varchar(32));
+
+## <b>Hosted Enviroments</b>
+1. https://_.herokuapp.com
