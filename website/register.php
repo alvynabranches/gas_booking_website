@@ -38,7 +38,8 @@
                 <div class="form-group"><input class="form-control" type="text" placeholder="Full Address" name="full_address"></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="User Name" required="" name="username"></div>
                 <div class="form-group"><input class="form-control" type="email" placeholder="Email" required="" name="email"></div>
-                <div class="form-group"><input class="form-control" type="password" placeholder="Password" required="" name="password"></div>
+                <div class="form-group"><input class="form-control" type="password" placeholder="Password" required="" name="password" id="password" autocomplete></div>
+                <div class="form-group"><input class="form-control" type="password" placeholder="Confirm Password" required="" name="confirm_password" id="confirm_password" autocomplete></div>
                 <div class="form-group"><select class="form-control" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php include_once('config.php');echo location_options()?></select></div>
                 <div class="form-group"><select class="form-control" required=""><option value="" selected="">Type</option><option value="non-commercial">Non-Commercial</option><option value="commercial">Commercial</option></select></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
@@ -48,6 +49,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

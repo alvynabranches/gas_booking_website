@@ -4,6 +4,8 @@
     $password="";
     $db="project";
     $con=new mysqli($host,$username,$password,$db);
+    error_reporting(0);
+    session_start();
     if($con->connect_error){die("Connection failed: ".$con->connect_error);}
     function console_log($m){echo "<script>console.log('$m')</script>";}
     function console_warn($m){echo "<script>console.warn('$m')</script>";}
@@ -15,19 +17,19 @@
             session_start();
         }
         if($_SESSION==null){
-            if($is_log_in){
+            if(!$is_log_in){
                 header("Location: $redirect_page");
             }
         }
         else{
-            if(!$is_log_in){
+            if($is_log_in){
                 header("Location: $redirect_page");
             }
         }
     }
     function logout(){session_start();session_destroy();}
     // function register(){
-    //     if isset() && isset() && isset(){
+    //     if isset($_POST['name']) && isset($_POST['address']) && isset($_POST['username']){
 
     //     }
     // }
