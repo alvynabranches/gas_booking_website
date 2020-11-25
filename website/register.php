@@ -31,7 +31,7 @@
     </nav>
     <div class="scroller">
         <div class="form-div container-fluid h-100">
-            <form class="form-table">
+            <form class="form-table" method="POST">
                 <div class="form-group"><input class="form-control" type="text" id="full_name" placeholder="Full Name" required="" name="full_name" autofocus="" minlength="5" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="text" id="full_address" placeholder="Full Address" name="full_address" minlength="32" required="" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="text" id="username" placeholder="User Name" required="" name="username" minlength="8" autocomplete="on"></div>
@@ -41,7 +41,7 @@
                 <div class="form-group"><select class="form-control" id="location" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php include_once('config.php');echo location_options(); ?></select></div>
                 <div class="form-group"><select class="form-control" id="type" required="" name="type"><option value="" selected="">Type</option><option value="domestic">Domestic</option><option value="commercial">Commercial</option></select></div>
                 <div class="btn-group d-flex pt-3"
-                    role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
+                    role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit" onclick="">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
             </form>
         </div>
     </div>
