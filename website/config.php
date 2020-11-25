@@ -6,32 +6,38 @@
     $con=new mysqli($host,$username,$password,$db);
     if($con->connect_error){die("Connection failed: ".$con->connect_error);}
     function console_log($m){echo "<script>console.log('$m')</script>";}
-    function location_options($sql="select * from location;",$host='localhost',$username='root',$password='',$db='project'){$con=new mysqli($host,$username,$password,$db);$result=mysqli_query($con,$sql);$options="";while($row=mysqli_fetch_assoc($result)){$options.="<option value='".$row['location_id']."'>".$row['location_name']."</option>";};return $options;}
-    function redirect_when_session_null($redirect_page){
+    function console_warn($m){echo "<script>console.warn('$m')</script>";}
+    function console_error($m){echo "<script>console.error('$m')</script>";}
+    function console_info($m){echo "<script>console.info('$m')</script>";}
+    function location_options($sql="select * from location order by location_name;",$host='localhost',$username='root',$password='',$db='project'){$con=new mysqli($host,$username,$password,$db);$result=mysqli_query($con,$sql);$options="";while($row=mysqli_fetch_assoc($result)){$options.="<option value='".$row['location_id']."'>".$row['location_name']."</option>";};return $options;}
+    function redirect(string $redirect_page, bool $login_required=FALSE){
         if(!isset($_COOKIE['PHPSESSID'])){
             session_start();
         }
         if($_SESSION==null){
-            header("Location: $redirect_page");
+            if($login_required){
+                header("Location: $redirect_page");
+            }
         }
-    }
-    $_SESSION['id'] = 10;
-    function redirect_when_session_not_null($redirect_page){
-        if(!isset($_COOKIE['PHPSESSID'])){
-            session_start();
-        }
-        if(isset($_SESSION)){
-            header("Location: $redirect_page");
+        else{
+            if(!$login_required){
+                header("Location: $redirect_page");
+            }
         }
     }
     // redirect_when_session_not_null('index.php');
-    echo "<script>console.log('Log message');</script>";
-    echo "<script>console.warn('Warn message');</script>";
-    echo "<script>console.error('Error message');</script>";
-    echo "<script>console.info('Info message');</script>";
-    echo "<script>console.assert('Assert message');</script>";
-    print_r($_SESSION);
-    if(isset($_SESSION)){
-        echo 'isset';
+    // print_r($_SESSION);
+    // if(isset($_SESSION)){
+    //     echo 'isset';
+    // }
+    // if($_SESSION == null){
+    //     echo 'session not null';
+    // }
+    function logout(){
+        session_start();
+        session_destroy();
     }
+    // logout();
+    $_SESSION['id'] = 10;
+    console_info($_SESSION['id']);
 ?>
