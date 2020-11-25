@@ -20,13 +20,8 @@
         if(!isset($_COOKIE['PHPSESSID'])){
             session_start();
         }
-        else{
-            echo "Session Started";
-            if($_SESSION==null){
-            }
-            else{
-                header("Location: $redirect_page");
-            }
+        if(isset($_SESSION)){
+            header("Location: $redirect_page");
         }
     }
     // redirect_when_session_not_null('index.php');
@@ -35,4 +30,8 @@
     echo "<script>console.error('Error message');</script>";
     echo "<script>console.info('Info message');</script>";
     echo "<script>console.assert('Assert message');</script>";
+    print_r($_SESSION);
+    if(isset($_SESSION)){
+        echo 'isset';
+    }
 ?>
