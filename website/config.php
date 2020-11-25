@@ -26,10 +26,10 @@
         }
     }
     function logout(){session_start();session_destroy();}
-    function register(){
-        if isset() && isset() && isset(){
-            
-        }
-    }
+    // function register(){
+    //     if isset() && isset() && isset(){
+
+    //     }
+    // }
     // logout();
 ?>
