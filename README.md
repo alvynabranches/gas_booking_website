@@ -22,7 +22,7 @@ CREATE TABLE location(location_id int PRIMARY KEY AUTO_INCREMENT, location_name 
 
 CREATE TABLE customer(customer_id int PRIMARY KEY AUTO_INCREMENT, customer_no int, customer_email varchar(128), username varchar(64), password varchar(64), customer_location_id int, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
 
-CREATE TABLE booking(booking_id int PRIMARY KEY AUTO_INCREMENT, booking_date date, booking_amount float, booking_customer_id int, FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
+CREATE TABLE booking(booking_id int PRIMARY KEY AUTO_INCREMENT, booking_date date, booking_amount float, booking_customer_id int, booking_status enum('pending', 'delivered'), FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
 
 CREATE TABLE payment(payment_id int PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id int, delivery_address varchar(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
 
@@ -30,6 +30,7 @@ INSERT INTO location(location_name) values ("Porvorim"), ("Panjim"), ("Mapusa");
 
 
 <br>
+
 #### <b>PostgreSQL</b>
 
 CREATE TABLE gas(gas_id SERIAL PRIMARY KEY, gas_name VARCHAR(64), gas_type VARCHAR(32));
