@@ -2,11 +2,11 @@
     $host="localhost";
     $username="root";
     $password="";
-    $db="project";
+    $db="gas_booking_system";
     $con=new mysqli($host,$username,$password,$db);
     error_reporting(0);
     session_start();
-    if($con->connect_error){die("Connection failed: ".$con->connect_error);}
+    if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     function console_log($m){echo "<script>console.log('$m')</script>";}
     function console_warn($m){echo "<script>console.warn('$m')</script>";}
     function console_error($m){echo "<script>console.error('$m')</script>";}
