@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/navbar-search.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <?php include_once("config.php"); redirect("user.php", TRUE); ?>
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <?php include_once("config.php"); redirect('user.php', TRUE); ?>
 </head>
 
 <body>
@@ -24,10 +22,10 @@
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link active d-xl-flex" data-bs-hover-animate="pulse" style="color:#ffffff;" href="index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.php">Contact Us</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="swing" style="color: #ffffff;font-weight: bold;" href="login.php">Login</a></li>
-                        <li class="nav-item btn-primary" role="presentation"><a class="nav-link" data-bs-hover-animate="shake" style="color: #ffffff;font-weight: bold;" href="register.php">Register</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active d-xl-flex" data-bs-hover-animate="pulse" style="color:#ffffff;" href="index.html"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="swing" style="color: #ffffff;font-weight: bold;" href="login.html">Login</a></li>
+                        <li class="nav-item btn-primary" role="presentation"><a class="nav-link" data-bs-hover-animate="shake" style="color: #ffffff;font-weight: bold;" href="register.html">Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +34,7 @@
     <div class="scroller"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/script.min.js"></script>
 </body>
 
 </html>

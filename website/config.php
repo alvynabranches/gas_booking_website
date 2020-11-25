@@ -28,10 +28,22 @@
         }
     }
     function logout(){session_start();session_destroy();}
-    // function register(){
-    //     if isset($_POST['name']) && isset($_POST['address']) && isset($_POST['username']){
-
-    //     }
-    // }
+    function register(){
+        if(isset($_POST['full_name']) && isset($_POST['full_address']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['location']) && isset($_POST['type'])){
+            $name=$_POST['full_name'];
+            $address=$_POST['full_address'];
+            $user=$_POST['username'];
+            $email=$_POST['email'];
+            $pwd=$_POST['password'];
+            $cnf_pwd=$_POST['confirm_password'];
+            $location=$_POST['location'];
+            $type=$_POST['type'];
+            if($pwd == $cnf_pwd){
+                $pwd=password_hash($pwd);
+            }
+            $sql="insert into customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type) values ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type')";
+            console_info($sql);
+        }
+    }
     // logout();
 ?>

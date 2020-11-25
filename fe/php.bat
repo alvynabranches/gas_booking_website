@@ -1,7 +1,7 @@
 @ECHO OFF
 cd %1
-mv index.html index.php
 mv contact-us.html contact-us.php
+mv index.html index.php
 mv login.html login.php
 mv profile.html profile.php
 mv register.html register.php
