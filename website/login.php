@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/navbar-search.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <?php include_once("config.php"); redirect_when_session_not_null("user.php"); ?>
 </head>
 
 <body>
