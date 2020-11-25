@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/navbar-search.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <?php include_once("config.php"); redirect("index.php", TRUE); ?>
+    <?php include_once("config.php"); redirect("index.php", FALSE); ?>
 </head>
 
 <body>
