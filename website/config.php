@@ -25,19 +25,9 @@
             }
         }
     }
-    // redirect_when_session_not_null('index.php');
-    // print_r($_SESSION);
-    // if(isset($_SESSION)){
-    //     echo 'isset';
-    // }
-    // if($_SESSION == null){
-    //     echo 'session not null';
-    // }
     function logout(){
         session_start();
         session_destroy();
     }
     // logout();
-    $_SESSION['id'] = 10;
-    console_info($_SESSION['id']);
 ?>
