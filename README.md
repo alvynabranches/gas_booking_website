@@ -26,10 +26,10 @@ CREATE TABLE booking(booking_id int PRIMARY KEY AUTO_INCREMENT, booking_date dat
 
 CREATE TABLE payment(payment_id int PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id int, delivery_address varchar(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
 
-INSERT INTO location(location_name) values ("Porvorim"), ("Panjim"), ("Mapusa");
+INSERT INTO location(location_name) values ("Porvorim"), ("Panjim"), ("Mapusa"), ("Ponda"), ("Valpoi"), ("");
 
 ###### SCHEMA CHANGES
-ALTER TABLE customer MODIFY username varchar(128) NOT NULL UNIQUE
+ALTER TABLE location MODIFY location_name varchar(128) NOT NULL UNIQUE
 
 
 <br>
