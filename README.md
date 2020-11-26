@@ -29,7 +29,7 @@ CREATE TABLE payment(payment_id int PRIMARY KEY AUTO_INCREMENT, payment_date dat
 INSERT INTO location(location_name) values ("Porvorim"), ("Panjim"), ("Mapusa"), ("Ponda"), ("Valpoi"), ("");
 
 ###### SCHEMA CHANGES
-ALTER TABLE location MODIFY location_name varchar(128) NOT NULL UNIQUE
+ALTER TABLE location MODIFY location_name varchar(128) NOT NULL UNIQUE;
 
 
 <br>
