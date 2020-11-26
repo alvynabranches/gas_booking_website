@@ -11,20 +11,20 @@
     function location_options($sql="select * from location order by location_name;"){$result=exec_query($sql);$options="";if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$options.="<option value='".$row['location_id']."'>".$row['location_name']."</option>";}};return $options;}
     function login($user,$pwd){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
-        // if(isset($_POST['username']) && isset($_POST['password'])){
-        //     $user=$_POST['username'];$pwd=$_POST['password'];
-        // }
-        $sql="select customer_id as id, customer_name as cn, password as pd from customer where username='$user';";
-        $result=exec_query($sql);
-        if($result->num_rows==1){
-            while($row=mysqli_fetch_assoc($result)){
-                $id=$row['id'];
-                $cn=$row['cn'];
-                $pd=$row['pd'];
-            }
-            password_verify($pwd, $pd);
-        }else{$m='User Not Found!';echo "<script>alert('$m');console.warn('$m')</script>";}
-        $password_check=password_verify($pwd, $pd);
+        if(isset($_POST['username']) && isset($_POST['password'])){
+            $user=$_POST['username'];$pwd=$_POST['password'];
+            $sql="select customer_id as id, customer_name as cn, password as pd from customer where username='$user';";
+            $result=exec_query($sql);
+            if($result->num_rows==1){
+                while($row=mysqli_fetch_assoc($result)){
+                    $id=$row['id'];
+                    $cn=$row['cn'];
+                    $pd=$row['pd'];
+                }
+                password_verify($pwd, $pd);
+            }else{$m='User Not Found!';console_warn('User Not Found!');}
+            $password_check=password_verify($pwd, $pd);
+        }
     }
     function logout(){session_start();session_destroy();}
     function register($host='localhost',$username='root',$password='',$db='gas_booking_system'){
@@ -35,7 +35,7 @@
             // if($pwd == $cnf_pwd){$pwd=password_hash($pwd);}
             $pwd=password_hash($pwd);
             $sql="insert into customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type, customer_no) values ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type', '$phone')";
-            if(exec_query($sql)===TRUE){console_info("Record Created Successfully"); header('Location: login.php');}
+            if(exec_query($sql)===TRUE){console_info("Record Created Successfully");echo "<script>let baseurl=window.location.origin;let loginurl=baseurl+'/project/website/login.php';setTimeout(function(){window.location.href=loginurl;}, 0);</script>";}
             else{console_warn("Record Not Created Successfully");}
         }
     }

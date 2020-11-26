@@ -31,7 +31,7 @@
     </nav>
     <div class="scroller">
         <div class="form-div container-fluid h-100">
-            <form class="login-form">
+            <form class="login-form" method="POST">
                 <div class="form-group"><input class="form-control" type="text" placeholder="User Name" name="username" autocomplete></div>
                 <div class="form-group"><input class="form-control" type="password" placeholder="Password" name="password" autocomplete></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="button">Clear</button></div>
