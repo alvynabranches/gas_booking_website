@@ -37,7 +37,6 @@
             $sql="insert into customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type, customer_no) values ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type', '$phone')";
             if(exec_query($sql)===TRUE){console_info("Record Created Successfully"); header('Location: login.php');}
             else{console_warn("Record Not Created Successfully");}
-            $con->close();
         }
     }
     // logout();

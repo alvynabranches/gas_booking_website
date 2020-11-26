@@ -20,7 +20,7 @@ CREATE TABLE gas(gas_id int PRIMARY KEY AUTO_INCREMENT, gas_name varchar(64), ga
 
 CREATE TABLE location(location_id int PRIMARY KEY AUTO_INCREMENT, location_name varchar(128));
 
-CREATE TABLE customer(customer_id int PRIMARY KEY AUTO_INCREMENT, customer_name varchar(128), customer_no bigint, customer_email varchar(128), customer_address varchar(1024), username varchar(128) NOT NULL UNIQUE, password varchar(64), customer_type ENUM('domestic', 'commercial'), customer_location_id int, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
+CREATE TABLE customer(customer_id int PRIMARY KEY AUTO_INCREMENT, customer_name varchar(128), customer_no bigint, customer_email varchar(128), customer_address varchar(1024), username varchar(128) NOT NULL UNIQUE, password varchar(1024), customer_type ENUM('domestic', 'commercial'), customer_location_id int, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
 
 CREATE TABLE booking(booking_id int PRIMARY KEY AUTO_INCREMENT, booking_date date, booking_amount float, booking_customer_id int, booking_status enum('pending', 'delivered'), FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
 
