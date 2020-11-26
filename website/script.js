@@ -43,13 +43,13 @@ document.getElementById('username').addEventListener('keyup', (e) => {
         document.getElementById('username').style.borderWidth = '5px';
     }
 });
-document.getElementById('email').addEventListener('keyup', (e) => {
-    let reg = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\a([A-Za-z]{2,4})$/;
-    if(reg.test(document.getElementById('email'))){
-        document.getElementById('email').style.borderColor = 'green';
-        document.getElementById('email').style.borderWidth = '5px';
-    }else{
-        document.getElementById('email').style.borderColor = 'red';
-        document.getElementById('email').style.borderWidth = '5px';
-    }
-});
+// document.getElementById('email').addEventListener('keyup', (e) => {
+//     let reg = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\a([A-Za-z]{2,4})$/;
+//     if(reg.test(document.getElementById('email'))){
+//         document.getElementById('email').style.borderColor = 'green';
+//         document.getElementById('email').style.borderWidth = '5px';
+//     }else{
+//         document.getElementById('email').style.borderColor = 'red';
+//         document.getElementById('email').style.borderWidth = '5px';
+//     }
+// });
