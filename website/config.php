@@ -29,21 +29,13 @@
     function logout(){session_start();session_destroy();}
     function register($host='localhost',$username='root',$password='',$db='gas_booking_system'){
         if(isset($_POST['full_name']) && isset($_POST['full_address']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['location']) && isset($_POST['type']) && isset($_POST['phone_no'])){
-            console_info('Inside register() if');
-            $name=$_POST['full_name'];
-            $address=$_POST['full_address'];
-            $user=$_POST['username'];
-            $email=$_POST['email'];
-            $pwd=$_POST['password'];
-            $cnf_pwd=$_POST['confirm_password'];
-            $location=$_POST['location'];
-            $type=$_POST['type'];
+            $name=$_POST['full_name'];$address=$_POST['full_address'];$user=$_POST['username'];$email=$_POST['email'];
+            $pwd=$_POST['password'];$cnf_pwd=$_POST['confirm_password'];$location=$_POST['location'];$type=$_POST['type'];
             $phone=$_POST['phone_no'];
             // if($pwd == $cnf_pwd){$pwd=password_hash($pwd);}
             $pwd=password_hash($pwd);
             $sql="insert into customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type, customer_no) values ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type', '$phone')";
-            $con=new mysqli($host,$username,$password,$db);
-            if($con->query($sql)===TRUE){console_info("Record Created Successfully"); header('Location: login.php');}
+            if(exec_query($sql)===TRUE){console_info("Record Created Successfully"); header('Location: login.php');}
             else{console_warn("Record Not Created Successfully");}
             $con->close();
         }
