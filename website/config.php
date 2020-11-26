@@ -24,7 +24,7 @@
             }
             password_verify($pwd, $pd);
         }else{$m='User Not Found!';echo "<script>alert('$m');console.warn('$m')</script>";}
-        // password_verify($pwd, );
+        $password_check=password_verify($pwd, $pd);
     }
     function logout(){session_start();session_destroy();}
     function register($host='localhost',$username='root',$password='',$db='gas_booking_system'){
