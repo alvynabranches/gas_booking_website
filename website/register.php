@@ -36,13 +36,13 @@
                 <div class="form-group"><input class="form-control" type="text" id="full_address" placeholder="Full Address" name="full_address" minlength="32" required="" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="text" id="username" placeholder="User Name" required="" name="username" minlength="8" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="email" id="email" placeholder="Email" required="" name="email" minlength="8" autofocus="" autocomplete="on"></div>
+                <div class="form-group"><input class="form-control" type="tel" id="phone_no" placeholder="Phone No" required="" name="phone_no" minlength="10" maxlength="10" autofocus="" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="password" id="password" placeholder="Password" required="" name="password" minlength="8" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" minlength="8" autocomplete="on" required=""></div>
                 <div class="form-group"><select class="form-control" id="location" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php include_once('config.php');echo location_options(); ?></select></div>
                 <div class="form-group"><select class="form-control" id="type" required="" name="type"><option value="" selected="">Type</option><option value="domestic">Domestic</option><option value="commercial">Commercial</option></select></div>
-                <div class="btn-group d-flex pt-3"
-                    role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit" onclick="">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
-                <?php include_once('config.php'); if(isset($_POST['submit_btn'])){register();} ?>
+                <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit" onclick="">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
+                <?php include_once('config.php'); echo register(); ?>
             </form>
         </div>
     </div>
