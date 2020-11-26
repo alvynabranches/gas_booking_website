@@ -42,6 +42,7 @@
                 <div class="form-group"><select class="form-control" id="type" required="" name="type"><option value="" selected="">Type</option><option value="domestic">Domestic</option><option value="commercial">Commercial</option></select></div>
                 <div class="btn-group d-flex pt-3"
                     role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit" onclick="">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
+                <?php include_once('config.php'); if(isset($_POST['submit_btn'])){register();} ?>
             </form>
         </div>
     </div>
