@@ -32,9 +32,9 @@
     <div class="scroller">
         <div class="form-div container-fluid h-100">
             <form class="login-form">
-                <div class="form-group"><input class="form-control" type="text" placeholder="User Name" name="username"></div>
-                <div class="form-group"><input class="form-control" type="password" placeholder="Password" name="password"></div>
-                <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="button">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="button">Clear</button></div>
+                <div class="form-group"><input class="form-control" type="text" placeholder="User Name" name="username" autocomplete></div>
+                <div class="form-group"><input class="form-control" type="password" placeholder="Password" name="password" autocomplete></div>
+                <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="button">Clear</button></div>
             </form>
         </div>
     </div>
