@@ -12,7 +12,8 @@
     function login(){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if(isset($_POST['username']) && isset($_POST['password'])){
-            $user=$_POST['username'];$pwd=$_POST['password'];$sql="select customer_id as id, customer_name as cn, password as pd from customer where username='$user';";$result=exec_query($sql);
+            $user=$_POST['username'];$pwd=$_POST['password'];
+            $sql="select customer_id as id, customer_name as cn, password as pd from customer where username='$user';";$result=exec_query($sql);
             if($result->num_rows==1){
                 while($row=mysqli_fetch_assoc($result)){
                     $id=$row['id'];
