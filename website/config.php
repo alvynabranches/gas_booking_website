@@ -9,7 +9,7 @@
     function redirect(string $redirect_page, bool $is_log_in=FALSE){if(!isset($_COOKIE['PHPSESSID'])){session_start();}if($_SESSION==null){if(!$is_log_in){header("Location: $redirect_page");}}else{if($is_log_in){header("Location: $redirect_page");}}}
     function exec_query($sql,$host='localhost',$username='root',$password='',$db='gas_booking_system'){$con=new mysqli($host,$username,$password,$db);$result=mysqli_query($con,$sql);$con->close();return $result;}
     function location_options($sql="select * from location order by location_name;"){$result=exec_query($sql);$options="";if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$options.="<option value='".$row['location_id']."'>".$row['location_name']."</option>";}};return $options;}
-    function login($user,$pwd){
+    function login(){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if(isset($_POST['username']) && isset($_POST['password'])){
             $user=$_POST['username'];$pwd=$_POST['password'];$sql="select customer_id as id, customer_name as cn, password as pd from customer where username='$user';";$result=exec_query($sql);
@@ -18,6 +18,7 @@
                     $id=$row['id'];
                     $cn=$row['cn'];
                     $pd=$row['pd'];
+                    console_info('Username Matched!');
                 }
                 password_verify($pwd, $pd);
             }else{$m='User Not Found!';console_warn('User Not Found!');}
