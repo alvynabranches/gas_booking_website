@@ -6,4 +6,5 @@ mv login.html login.php
 mv profile.html profile.php
 mv register.html register.php
 mv user.html user.php
+mv user-booking.html user-booking.php
 mv user-contact-us.html user-contact-us.php
