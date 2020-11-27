@@ -1,9 +1,6 @@
 <?php
     error_reporting(0);session_start();
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'root');
-    define('PASSWORD', '');
-    define('DB', 'gas_booking_system');
+    define('DB_SERVER', 'localhost');define('DB_USERNAME', 'root');define('PASSWORD', '');define('DB', 'gas_booking_system');
     define('REPORT', TRUE);
     $con=new mysqli(DB_SERVER,DB_USERNAME,PASSWORD,DB);
     function console_log($m){echo "<script>console.log('$m')</script>";}
