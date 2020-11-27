@@ -27,6 +27,10 @@
             if($password_check){
                 $_SESSION['id']=$id;$_SESSION['name']=$id;$_SESSION['username']=$user;
                 header('Location: user.php');
+                redirect('user.php', );
+                console_info($_SESSION['id']);
+                console_info($_SESSION['name']);
+                console_info($_SESSION['username']);
             }else{
                 header('Location: login.php');
             }
