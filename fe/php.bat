@@ -10,3 +10,4 @@ mv user-booking.html user-booking.php
 mv user-change-password.html user-change-password.php
 mv user-contact-us.html user-contact-us.php
 mv user-order-status.html user-order-status.php
+mv user-settings.html user-settings.php
