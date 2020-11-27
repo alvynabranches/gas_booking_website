@@ -18,11 +18,19 @@
                     $id=$row['id'];
                     $cn=$row['cn'];
                     $pd=$row['pd'];
-                    console_info('Username Matched!');
+                    console_info('Username Found!');
                 }
                 password_verify($pwd, $pd);
             }else{$m='User Not Found!';console_warn('User Not Found!');}
             $password_check=password_verify($pwd, $pd);
+            if($password_check){
+                $_SESSION['id'] = $id;
+                $_SESSION['name'] = $id;
+                $_SESSION['username'] = $username;
+                header('Location: user.php');
+            }else{
+                header('Location: login.php');
+            }
         }
     }
     function logout(){session_start();session_unset();console_info('Logged Out Successfully!');}
