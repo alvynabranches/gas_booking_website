@@ -27,12 +27,13 @@
             if($password_check){
                 $_SESSION['id']=$id;$_SESSION['name']=$id;$_SESSION['username']=$user;
                 header('Location: user.php');
-                redirect('user.php', );
+                redirect('user.php', TRUE);
                 console_info($_SESSION['id']);
                 console_info($_SESSION['name']);
                 console_info($_SESSION['username']);
+                console_log('Logged In Successfully!');
             }else{
-                header('Location: login.php');
+                console_warn('Password Incorrect!');
             }
         }
     }
