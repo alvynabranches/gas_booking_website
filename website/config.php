@@ -25,9 +25,7 @@
             }else{$m='User Not Found!';console_warn('User Not Found!');}
             $password_check=password_verify($pwd, $pd);
             if($password_check){
-                $_SESSION['id'] = $id;
-                $_SESSION['name'] = $id;
-                $_SESSION['username'] = $username;
+                $_SESSION['id']=$id;$_SESSION['name']=$id;$_SESSION['username']=$user;
                 header('Location: user.php');
             }else{
                 header('Location: login.php');
