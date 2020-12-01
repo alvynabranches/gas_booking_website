@@ -44,8 +44,7 @@ document.getElementById('full_address').addEventListener('focus', (e) => {
     if (document.getElementById('full_address').value.length >= 16){
         document.getElementById('password').style.border = '5px solid green';
     }else{
-        document.getElementById('full_address').style.borderColor = 'red';
-        document.getElementById('full_address').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid red';
     }
 });
 document.getElementById('full_address').addEventListener('focusout', (e) => {
