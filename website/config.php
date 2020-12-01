@@ -25,8 +25,5 @@
             }
         }
     }
-    echo date('Y-m-d H:i:s');
-    $sql="insert into booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) values ($(date('Y-m-d H:i:s')))";
-    $date=date('Y-m-d H:i:s');
-    console_log($date);
+    console_log(date('Y-m-d H:i:s'));
 ?>
