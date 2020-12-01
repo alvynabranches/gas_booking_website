@@ -80,8 +80,7 @@ document.getElementById('username').addEventListener('focus', (e) => {
 });
 document.getElementById('username').addEventListener('focusout', (e) => {
     if(document.getElementById('username').value.length < 8) {
-        document.getElementById('username').style.borderColor = 'red';
-        document.getElementById('username').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid red';
     }else{
         document.getElementById('username').style.borderColor = 'green';
         document.getElementById('username').style.borderWidth = '5px';
