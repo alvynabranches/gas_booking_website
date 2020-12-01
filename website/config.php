@@ -17,11 +17,8 @@
     function booking(){
         if(isset($_POST['amount'])&&isset($_POST['book_now'])&&isset($_POST['payment_option'])){
             if($_POST['book_now'] == '1'){
-                $amount=$_POST['amount'];
-                $payment_option=$_POST['payment_option'];
-                $c_id=$_SESSION['id'];
-                $date_time_now=date('Y-m-d H:i:s');
-                $sql="insert into booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) values ('$time_now', '$amount', '$c_id', 'pending');";
+                $amount=$_POST['amount'];$payment_option=$_POST['payment_option'];$c_id=$_SESSION['id'];$date_time_now=date('Y-m-d H:i:s');
+                $sql="insert into booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) values ('$time_now', '$amount', '$c_id', 'pending', '$payment_option');";
             }
         }
     }
