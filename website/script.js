@@ -1,7 +1,6 @@
 document.getElementById('confirm_password').addEventListener('keyup', (e) => {
     if(document.getElementById('password').value != document.getElementById('confirm_password').value || document.getElementById('password').value.length < 8) {
-        document.getElementById('confirm_password').style.borderColor = 'red';
-        document.getElementById('confirm_password').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid red';
     }else{
         document.getElementById('confirm_password').style.borderColor = 'green';
         document.getElementById('confirm_password').style.borderWidth = '5px';
@@ -19,8 +18,7 @@ document.getElementById('full_name').addEventListener('keydown', (e) => {
         document.getElementById('full_name').style.borderColor = 'green';
         document.getElementById('full_name').style.borderWidth = '5px';
     }else{
-        document.getElementById('full_name').style.borderColor = 'red';
-        document.getElementById('full_name').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid red';
     }
 });
 document.getElementById('full_name').addEventListener('focus', (e) => {
