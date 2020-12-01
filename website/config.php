@@ -19,7 +19,9 @@
             if($_POST['book_now'] == '1'){
                 $amount=$_POST['amount'];
                 $payment_option=$_POST['payment_option'];
-                $sql="insert into booking"
+                $c_id=$_SESSION['id'];
+                $date_time_now='';
+                $sql="insert into booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) values ()";
             }
         }
     }
