@@ -30,8 +30,8 @@ INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa");
 INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("Margao"), ("Pernem"), ("Bicholim"), ("Canacona");
 
 ###### SCHEMA CHANGES
-
 ALTER TABLE booking ADD COLUMN booking_type ENUM("cod", "prepaid");
+ALTER TABLE booking MODIFY booking_customer_id int NOT NULL;
 
 <br>
 
