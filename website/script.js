@@ -35,8 +35,7 @@ document.getElementById('full_name').addEventListener('focusout', (e) => {
 });
 document.getElementById('full_address').addEventListener('keyup', (e) => {
     if (document.getElementById('full_address').value.length >= 16){
-        document.getElementById('full_address').style.borderColor = 'green';
-        document.getElementById('full_address').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid green';
     }else{
         document.getElementById('password').style.border = '5px solid red';
     }
