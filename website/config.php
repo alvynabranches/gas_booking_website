@@ -19,6 +19,7 @@
             if($_POST['book_now'] == '1'){
                 $amount=$_POST['amount'];
                 $payment_option=$_POST['payment_option'];
+                $sql="insert into booking"
             }
         }
     }

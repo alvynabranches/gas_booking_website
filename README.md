@@ -18,7 +18,7 @@
 
 CREATE TABLE gas(gas_id int PRIMARY KEY AUTO_INCREMENT, gas_name varchar(64), gas_type varchar(32));
 
-CREATE TABLE location(location_id int PRIMARY KEY AUTO_INCREMENT, location_name varchar(128));
+CREATE TABLE location(location_id int PRIMARY KEY AUTO_INCREMENT, location_name varchar(128) NOT NULL UNIQUE);
 
 CREATE TABLE customer(customer_id int PRIMARY KEY AUTO_INCREMENT, customer_name varchar(128), customer_no bigint, customer_email varchar(128), customer_address varchar(1024), username varchar(128) NOT NULL UNIQUE, password varchar(1024), customer_type ENUM('domestic', 'commercial'), customer_location_id int, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
 
@@ -30,8 +30,8 @@ INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa");
 INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("Margao"), ("Pernem"), ("Bicholim"), ("Canacona");
 
 ###### SCHEMA CHANGES
-ALTER TABLE location MODIFY location_name varchar(128) NOT NULL UNIQUE;
 
+ALTER TABLE booking ADD COLUMN booking_type ENUM("cod", "prepaid");
 
 <br>
 
