@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);session_start();
+    error_reporting(0);session_start();date_default_timezone_set('Asia/Kolkata');
     define('DEBUG', TRUE);
     if(DEBUG){define('REPORT', TRUE);}else{define('REPORT',FALSE);}
     define('DB_SERVER', 'localhost');define('DB_USERNAME', 'root');define('PASSWORD', '');define('DB', 'gas_booking_system');$con=new mysqli(DB_SERVER,DB_USERNAME,PASSWORD,DB);
