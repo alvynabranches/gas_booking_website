@@ -81,7 +81,6 @@ document.getElementById('username').addEventListener('focusout', (e) => {
 //         document.getElementById('email').style.borderColor = 'green';
 //         document.getElementById('email').style.borderWidth = '5px';
 //     }else{
-//         document.getElementById('email').style.borderColor = 'red';
-//         document.getElementById('email').style.borderWidth = '5px';
+//         document.getElementById('password').style.border = '5px solid red';
 //     }
 // });
