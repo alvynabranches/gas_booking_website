@@ -2,8 +2,7 @@ document.getElementById('confirm_password').addEventListener('keyup', (e) => {
     if(document.getElementById('password').value != document.getElementById('confirm_password').value || document.getElementById('password').value.length < 8) {
         document.getElementById('password').style.border = '5px solid red';
     }else{
-        document.getElementById('confirm_password').style.borderColor = 'green';
-        document.getElementById('confirm_password').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid green';
     }
 });
 document.getElementById('password').addEventListener('keyup', (e) => {
