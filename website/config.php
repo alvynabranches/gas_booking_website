@@ -18,7 +18,7 @@
         if(isset($_POST['amount'])&&isset($_POST['book_now'])&&isset($_POST['payment_option'])){
             if($_POST['book_now'] == '1'){
                 $amount=$_POST['amount'];
-                $payment_option=$_POST[''];
+                $payment_option=$_POST['payment_option'];
             }
         }
     }
