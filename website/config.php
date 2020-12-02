@@ -14,6 +14,11 @@
     function logout_user(){if(isset($_GET['action'])){if($_GET['action'] == 'logout'){logout();}}}
     function register(){if(isset($_POST['full_name'])&&isset($_POST['full_address'])&&isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])&&isset($_POST['confirm_password'])&&isset($_POST['location'])&&isset($_POST['type'])&&isset($_POST['phone_no'])){$name=$_POST['full_name'];$address=$_POST['full_address'];$user=$_POST['username'];$email=$_POST['email'];$pwd=$_POST['password'];$cnf_pwd=$_POST['confirm_password'];$location=$_POST['location'];$type=$_POST['type'];$phone=$_POST['phone_no'];$pwd=password_hash($pwd, PASSWORD_DEFAULT);$sql="insert into customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type, customer_no) values ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type', '$phone')";if(exec_query($sql)===TRUE){if(REPORT){console_info("Record Created Successfully");}echo "<script>let baseurl=window.location.origin;let loginurl=baseurl+'/project/website/login.php';setTimeout(function(){window.location.href=loginurl;},0);</script>";}else{if(REPORT){console_warn("Record Not Created Successfully");}}}}
     function booking(){if(isset($_POST['amount'])&&isset($_POST['book_now'])&&isset($_POST['payment_option'])){if($_POST['book_now'] == '1'){$amount=$_POST['amount'];$payment_option=$_POST['payment_option'];$c_id=$_SESSION['id'];$date_time_now=date('Y-m-d H:i:s');$sql="insert into booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) values ('$time_now', '$amount', '$c_id', 'pending', '$payment_option');";if(exec_query($sql)===TRUE){console_log('Booking Successfully Done!');echo "<script>alert('Booking Successfully Done!');</script>";}else{console_log('Booking Unsuccessfully!');echo "<script>alert('Booking Unsuccessfully!');</script>";}}}}
+    function change_password(){
+        if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
+            
+        }
+    }
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     console_log(date('Y-m-d H:i:s'));
 ?>
