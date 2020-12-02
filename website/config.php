@@ -23,7 +23,7 @@
                 if(password_verify($op, $db_pwd)){
                     $pwd=password_hash($np, PASSWORD_DEFAULT);
                     exec_query("UPDATE customer SET password='$pwd' where id='$id'");
-                }
+                }else{console_log("");}
             }
         }
     }
