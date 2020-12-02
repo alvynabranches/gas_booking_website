@@ -6,6 +6,7 @@
     function console_warn($m){echo "<script>console.warn('$m')</script>";}
     function console_error($m){echo "<script>console.error('$m')</script>";}
     function console_info($m){echo "<script>console.info('$m')</script>";}
+    function alert($m){echo "<script>alert('$m');</script>";}
     function redirect(string $redirect_page, bool $is_log_in=FALSE){if(!isset($_COOKIE['PHPSESSID'])){session_start();}if($_SESSION==null){if(!$is_log_in){header("Location: $redirect_page");}}else{if($is_log_in){header("Location: $redirect_page");}}}
     function exec_query($sql,$host='localhost',$username='root',$password='',$db='gas_booking_system'){$con=new mysqli($host,$username,$password,$db);$result=mysqli_query($con,$sql);$con->close();return $result;}
     function location_options($sql="select * from location order by location_name;"){$result=exec_query($sql);$options="";if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$options.="<option value='".$row['location_id']."'>".$row['location_name']."</option>";}};return $options;}
@@ -23,7 +24,7 @@
                 if(password_verify($op, $db_pwd)){
                     $pwd=password_hash($np, PASSWORD_DEFAULT);
                     exec_query("UPDATE customer SET password='$pwd' where id='$id'");
-                }else{console_log("");}
+                }else{console_log("Password Does not Match!");alert("Password Does Not Match!");}
             }
         }
     }
