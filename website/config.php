@@ -23,8 +23,8 @@
                 $id=$_SESSION['id'];
                 while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE id='$id'"))){$db_pwd=$row['password'];}
                 if(password_verify($op, $db_pwd)){
-                    $pwd=password_hash($np, PASSWORD_DEFAULT);
-                    if(exec_query("UPDATE customer SET password='$pwd' where id='$id'")===TRUE){
+                    $new_pwd=password_hash($np, PASSWORD_DEFAULT);
+                    if(exec_query("UPDATE customer SET password='$new_pwd' where id='$id'")===TRUE){
                         if(REPORT){console_log("Password Updated Successfully");}
                         alert("Password Updated Successfully");
                         redirect("user.php",TRUE);
