@@ -19,7 +19,7 @@
             $op=$_POST['old_password'];
             $np=$_POST['new_password'];
             $cnp=$_POST['confirm_new_password'];
-            if $np == $cnp{
+            if $np==$cnp{
                 $id=$_SESSION['id'];
                 $result=exec_query("select password from customer where id='$id'");
                 $pwd=password_hash($np);
