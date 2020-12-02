@@ -5,6 +5,11 @@ document.getElementById('confirm_password').addEventListener('keyup', (e) => {
         document.getElementById('password').style.border = '5px solid green';
     }
 });
+document.getElementById('confirm_password').addEventListener('focusout', (e) => {
+    if(document.getElementById('password').value != document.getElementById('confirm_password').value || document.getElementById('confirm_password').value.length < 8){
+        alert('Confirm password does not match the password');
+    }
+});
 document.getElementById('password').addEventListener('keyup', (e) => {
     if(document.getElementById('password').value.length < 8) {
         document.getElementById('password').style.border = '5px solid red';
