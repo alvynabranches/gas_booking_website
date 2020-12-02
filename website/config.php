@@ -23,7 +23,9 @@
                 while($row=mysqli_fetch_assoc(exec_query("select password from customer where id='$id'"))){$db_pwd=$row['password'];}
                 if(password_verify($op, $db_pwd)){
                     $pwd=password_hash($np, PASSWORD_DEFAULT);
-                    exec_query("UPDATE customer SET password='$pwd' where id='$id'");
+                    if(exec_query("UPDATE customer SET password='$pwd' where id='$id'") === TRUE){
+                        
+                    }
                 }else{console_log("Password Does not Match!");alert("Password Does Not Match!");}
             }
         }
