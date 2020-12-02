@@ -80,6 +80,7 @@ document.getElementById('username').addEventListener('focusout', (e) => {
         document.getElementById('username').style.border = '5px solid green';
     }
 });
+
 // document.getElementById('email').addEventListener('keyup', (e) => {
 //     let reg = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\a([A-Za-z]{2,4})$/;
 //     if(reg.test(document.getElementById('email'))){
