@@ -32,6 +32,7 @@ INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("M
 ###### SCHEMA CHANGES
 ALTER TABLE booking ADD COLUMN booking_type ENUM("cod", "prepaid");
 ALTER TABLE booking MODIFY booking_customer_id int NOT NULL;
+ALTER TABLE booking MODIFY booking_date DATETIME NOT NULL;
 
 <br>
 

@@ -6,7 +6,7 @@ document.getElementById('confirm_password').addEventListener('keyup', (e) => {
     }
 });
 document.getElementById('confirm_password').addEventListener('focusout', (e) => {
-    if(document.getElementById('password').value != document.getElementById('confirm_password').value || document.getElementById('confirm_password').value.length < 8){
+    if(document.getElementById('password').value != document.getElementById('confirm_password').value){
         alert('Confirm password does not match the password');
     }
 });
