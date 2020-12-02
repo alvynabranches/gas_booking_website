@@ -1,6 +1,6 @@
 <?php
-    define('DEBUG', TRUE);error_reporting(0);session_start();date_default_timezone_set('Asia/Kolkata');
-    if(DEBUG){define('REPORT', TRUE);}else{define('REPORT',FALSE);}
+    define('DEBUG',TRUE);error_reporting(0);session_start();date_default_timezone_set('Asia/Kolkata');
+    if(DEBUG){define('REPORT',TRUE);}else{define('REPORT',FALSE);}
     define('DB_SERVER', 'localhost');define('DB_USERNAME', 'root');define('PASSWORD', '');define('DB', 'gas_booking_system');$con=new mysqli(DB_SERVER,DB_USERNAME,PASSWORD,DB);
     function console_log($m){echo "<script>console.log('$m')</script>";}
     function console_warn($m){echo "<script>console.warn('$m')</script>";}
@@ -24,11 +24,13 @@
                 while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE id='$id'"))){$db_pwd=$row['password'];}
                 if(password_verify($op, $db_pwd)){
                     $pwd=password_hash($np, PASSWORD_DEFAULT);
-                    if(exec_query("UPDATE customer SET password='$pwd' where id='$id'") === TRUE){
-
+                    if(exec_query("UPDATE customer SET password='$pwd' where id='$id'")===TRUE){
+                        if(REPORT){console_log("Password Updated Successfully");}
+                        alert("Password Updated Successfully");
+                        redirect("user.php",TRUE);
                     }
-                }else{console_log("Password Does Not Match!");alert("Password Does Not Match!");}
-            }else{console_log("Confirm Password Does not Match!");alert("Confirm Password Does Not Match!");};
+                }else{if(REPORT){console_log("Password Does Not Match!");}alert("Password Does Not Match!");}
+            }else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};
         }
     }
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
