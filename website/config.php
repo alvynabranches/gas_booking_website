@@ -27,5 +27,5 @@
     function delivered_orders($id){return exec_query("SELECT * FROM booking WHERE id='$id' AND booking_status='delivered';");}
     
     // console_log(date('Y-m-d H:i:s'));
-    // print_r($_SESSION);
+    
 ?>
