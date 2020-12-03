@@ -60,9 +60,7 @@
                 }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
                     $sql="UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';";
                 }else{
-                    if(REPORT){
-                        console_log("Everything is up to date!");
-                    }
+                    if(REPORT){console_log("Everything is up to date!");}
                     alert("Everything is up to date!");
                     redirect("user.php",TRUE);
                 }
