@@ -19,6 +19,7 @@
     function contact_us(){
         if(isset($_POST['name'])&&(isset($_POST['phone']))&&(isset($_POST['email']))&&(isset($_POST['location']))&&(isset($_POST['subject']))&&(isset($_POST['message']))){
             $name=$_POST['name'];
+            $phone=$_POST['phone'];
         }
     }
 
