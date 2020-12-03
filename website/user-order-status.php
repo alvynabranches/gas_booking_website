@@ -59,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php echo ""; ?>
+                        <?php include_once('config.php');echo ""; ?>
                     </tbody>
                 </table>
             </div>
