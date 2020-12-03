@@ -37,6 +37,7 @@
                 <div class="form-group"><input class="form-control" type="password" name="confirm_new_password" placeholder="Confirm New Password">
                     <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="reset">Reset</button></div>
                 </div>
+                <?php change_password();?>
             </form>
         </div>
     </div>
