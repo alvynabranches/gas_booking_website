@@ -97,8 +97,7 @@
                     }
                 }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
                     if(exec_query("UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';")){
-                        $_SESSION['address']=$new_address;
-                        if(REPORT){console_log("Successfully Updated Customer Address!");}alert("Successfully Updated Customer Address!");
+                        $_SESSION['address']=$new_address;if(REPORT){console_log("Successfully Updated Customer Address!");}alert("Successfully Updated Customer Address!");
                     }else{
                         if(REPORT){console_log("Unsuccessfully Updated Customer Address!");}alert("Unsuccessfully Updated Customer Address!");
                     }
