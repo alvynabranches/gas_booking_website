@@ -76,17 +76,6 @@
                     alert("Everything is up to date!");
                     redirect("user.php",TRUE);
                 }
-                if(($new_name!=$name)||($new_phone!=$phone)||($new_address!=$address)){
-                    if(exec_query($sql)===TRUE){
-                        if(REPORT){console_log("Successfully Updated Your Changes");}
-                        alert("Successfully Updated Your Changes");
-                        redirect("user.php",TRUE);
-                    }else{
-                        if(REPORT){console_log("Unsuccessful In Updating Your Changes!");}
-                        alert("Unsuccessful In Updating Your Changes!");
-                        redirect("user-settings.php",TRUE);
-                    }
-                }
             }else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}
         }
     }
