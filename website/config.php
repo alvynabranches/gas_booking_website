@@ -61,8 +61,7 @@
                     if(exec_query("UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';")){
                         $_SESSION['name']=$new_name;if(REPORT){console_log("Successfully Updated Customer Name!");}alert("Successfully Updated Customer Name!");
                     }else{if(REPORT){console_log("Unsuccessfully Updated Customer Name!");}alert("Unsuccessfully Updated Customer Name!");
-                    }
-                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
+                    }}elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
                     if(exec_query("UPDATE customer SET customer_no='$new_phone' WHERE customer_id='$id';")){$_SESSION['phone_no']=$new_phone;if(REPORT){console_log("Successfully Updated Customer Phone No.!");}alert("Successfully Updated Customer Phone No.!");
                     }else{if(REPORT){console_log("Unsuccessfully Updated Customer Phone No.!");}alert("Unsuccessfully Updated Customer Phone No.!");}}elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){if(exec_query("UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';")){$_SESSION['address']=$new_address;if(REPORT){console_log("Successfully Updated Customer Address!");}alert("Successfully Updated Customer Address!");}else{if(REPORT){console_log("Unsuccessfully Updated Customer Address!");}alert("Unsuccessfully Updated Customer Address!");}}else{if(REPORT){console_log("Everything is up to date!");}alert("Everything is up to date!");redirect("user.php",TRUE);}}else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}}}if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     // console_log(date('Y-m-d H:i:s'));
