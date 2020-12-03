@@ -18,10 +18,10 @@
     function contact_us(){if(isset($_POST['name'])&&(isset($_POST['phone']))&&(isset($_POST['email']))&&(isset($_POST['location']))&&(isset($_POST['subject']))&&(isset($_POST['message']))){$name=$_POST['name'];$phone=$_POST['phone'];$email=$_POST['email'];$location=$_POST['location'];$subject=$_POST['subject'];$message=$_POST['message'];$date_time_now=date('Y-m-d H:i:s');if(exec_query("INSERT INTO feedback (feedback_date, name, phone_no, email, feedback_location_id, feedback_subject, feedback_message) VALUES ('$date_time_now', '$name', '$phone', '$email', '$location', '$subject', '$message');")===TRUE){if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}}else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}}}
     function user_contact_us(){if(isset($_SESSION['id'])&&isset($_POST['subject'])&&isset($_POST['message'])){$subject=$_POST['subject'];$message=$_POST['message'];$id=$_SESSION['id'];if(exec_query("INSERT INTO user_feedback (feedback_customer_id, feedback_subject, feedback_message) VALUES ('$id', '$subject', '$message');")){if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}}else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}}}
     function get_db_user_password($id){
-        while($row=mysqli_fetch_assoc(exec_query("SELECT password as p FROM customer where customer_id='$id';"))){
-            $db_pwd=$row['p'];
+        while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer where customer_id='$id';"))){
+            $db_p=$row['password'];
         }
-        return $db_pwd;
+        return $db_p;
     }
     function change_password(){
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
