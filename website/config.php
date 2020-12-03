@@ -37,9 +37,12 @@
                     }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};}
     }
     function settings(){
-        
+        if(isset($_POST['username'])){
+
+        }
     }
+    
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     console_log(date('Y-m-d H:i:s'));
-    // print_r($_SESSION);
+    print_r($_SESSION);
 ?>
