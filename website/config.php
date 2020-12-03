@@ -25,8 +25,7 @@
     function pending_orders($id){return exec_query("SELECT * FROM booking WHERE id='$id' AND booking_status='pending';");}
     function delivered_orders($id){return exec_query("SELECT * FROM booking WHERE id='$id' AND booking_status='delivered';");}
     function change_password(){
-        if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
-            $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
+        if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){$op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
             if($np==$cnp){
                 $id=$_SESSION['id'];
                 $db_pwd=get_db_user_password($id);
