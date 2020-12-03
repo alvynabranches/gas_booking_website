@@ -51,5 +51,4 @@
     <script src="assets/js/script.min.js"></script>
     <script src="asserts/js/register.js"></script>
 </body>
-
 </html>
