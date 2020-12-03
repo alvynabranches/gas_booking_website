@@ -34,6 +34,7 @@
                 <div class="form-group login-form"><input class="form-control" type="text" placeholder="Subject" name="subject"></div>
                 <div class="form-group"><textarea class="form-control" placeholder="Message" name="message"></textarea></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" type="submit">Submit</button><button class="btn btn-warning btn-rounded" type="reset">Clear</button></div>
+                <?php include_once('config.php');user_contact_us();?>
             </form>
         </div>
     </div>
