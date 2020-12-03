@@ -37,7 +37,7 @@
             }else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");}
         }
     }
-    function pending_orders(){
+    function pending_orders($id){
         $result=exec_query("");
     }
     function delivered_orders(){
