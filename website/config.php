@@ -120,7 +120,6 @@
     print_r($_SESSION);
     // session_unset();
     // echo get_db_user_password(9);
-    $c_id=9;
     
     echo "<br>";
     echo $result->num_rows;
@@ -130,8 +129,9 @@
         $result=exec_query("SELECT password FROM customer where customer_id='$c_id';");
         if($result->num_rows==1){
             while($row=mysqli_fetch_assoc($result)){
-                echo $row['password'];
+                $p=$row['password'];
             }
         }
+        return $p;
     }
 ?>
