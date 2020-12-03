@@ -30,6 +30,7 @@
                         if(REPORT){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);
                     }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};}
     }
+    
     function change_details(){
         if(isset($_POST['name'])&&isset($_POST['phone_no'])&&isset($_POST['address'])&&isset($_POST['password'])){
             $new_name=$_POST['name'];$name=$_SESSION['name'];
