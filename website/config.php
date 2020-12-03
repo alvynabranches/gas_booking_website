@@ -46,7 +46,6 @@
         return $records;
     }
     print_r($_SESSION);
-    // echo delivered_orders(9);
     echo "<br><br><br>";
 ?>
 <!-- <table><?php echo pending_orders(9);?></table> -->
