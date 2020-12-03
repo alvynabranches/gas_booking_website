@@ -37,7 +37,7 @@
                     }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};}
     }
     function settings(){
-        if(isset($_POST['username'])){
+        if(isset($_POST['username'])&&isset($_POST['name'])&&isset($_POST['type'])){
             
         }
     }
