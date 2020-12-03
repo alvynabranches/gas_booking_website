@@ -109,7 +109,7 @@
     function get_location($location_id){
         $result=exec_query("select location_name as ln where location_id='$location_id'");
         if($result->rows==1){while($row=mysqli_fetch_assoc($result)){$ln=$row['ln'];}}
-        return ln;
+        return $ln;
     }
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     // console_log(date('Y-m-d H:i:s'));
