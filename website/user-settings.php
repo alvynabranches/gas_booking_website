@@ -22,10 +22,8 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.php">Contact Us</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link btn-primary" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container">username</a>
-                        <div class="dropdown-menu"
-                            role="menu"><a class="dropdown-item" role="presentation" href="user.php">Profile</a><a class="dropdown-item" role="presentation" href="user-booking.php">Booking</a><a class="dropdown-item" role="presentation" href="user-order-status.php">Order Status</a>
-                            <a
-                                class="dropdown-item" role="presentation" href="user-change-password.php">Change Password</a><a class="dropdown-item active" role="presentation" href="user-settings.php">Settings</a><a class="dropdown-item" role="presentation" href="logout.php?action=logout">Logout</a></div>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="user.php">Profile</a><a class="dropdown-item" role="presentation" href="user-booking.php">Booking</a><a class="dropdown-item" role="presentation" href="user-order-status.php">Order Status</a>
+                            <a class="dropdown-item" role="presentation" href="user-change-password.php">Change Password</a><a class="dropdown-item active" role="presentation" href="user-settings.php">Settings</a><a class="dropdown-item" role="presentation" href="user-settings.php?action=logout">Logout<?php include_once("config.php"); logout_user();redirect('index.php',FALSE);?></a></div>
                     </li>
                 </ul>
         </div>
@@ -35,7 +33,7 @@
         <div class="details-div container-fluid h-100">
             <form method="POST">
                 <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username" value="<?php if(isset($_SESSION['username'])){echo $_SESSION['username'];}?>" disabled="" readonly=""></div>
-                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" value="<?php include('config.php');if(isset($_SESSION['username'])){echo $_SESSION['name'];}?>"></div>
+                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" value="<?php include_once('config.php');if(isset($_SESSION['username'])){echo $_SESSION['name'];}?>"></div>
                 <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php');if(isset($_SESSION['type'])){echo $_SESSION['type'];}?>" name="type" placeholder="Type" disabled="" readonly=""></div>
                 <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php');echo get_location($_SESSION['customer_location_id']);?>" placeholder="Location" name="location" disabled="" readonly=""></div>
                 <div class="form-group"><input class="form-control" type="text" name="phone_no" placeholder="Phone No" value="<?php include_once('config.php');echo $_SESSION['customer_phone_no'];?>"></div>
