@@ -38,7 +38,7 @@
         }
     }
     function pending_orders(){
-
+        $result=exec_query("");
     }
     function delivered_orders(){
         
