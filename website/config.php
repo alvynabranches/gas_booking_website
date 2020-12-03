@@ -22,6 +22,8 @@
             $phone=$_POST['phone'];
             $email=$_POST['email'];
             $location=$_POST['location'];
+            $subject=$_POST['subject'];
+            $message=$_POST['message'];
         }
     }
 
