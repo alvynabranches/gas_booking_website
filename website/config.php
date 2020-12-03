@@ -40,7 +40,6 @@
     function change_details(){
         if(isset($_POST['name'])&&isset($_POST['phone_no'])&&isset($_POST['address'])&&isset($_POST['password'])){
             $new_name=$_POST['name'];$name=$_SESSION['name'];$new_phone=$_POST['phone_no'];$phone=$_SESSION['customer_phone_no'];$new_address=$_POST['address'];$address=$_SESSION['customer_address'];$pwd=$_POST['password'];$id=$_SESSION['id'];
-            
             $db_pwd=get_db_user_password($id);
             if(password_verify($pwd, $db_pwd)){
                 if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
