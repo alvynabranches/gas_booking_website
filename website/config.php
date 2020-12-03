@@ -39,8 +39,7 @@
 
     function change_details(){
         if(isset($_POST['name'])&&isset($_POST['phone_no'])&&isset($_POST['address'])&&isset($_POST['password'])){
-            $new_name=$_POST['name'];$name=$_SESSION['name'];
-            $new_phone=$_POST['phone_no'];$phone=$_SESSION['customer_phone_no'];
+            $new_name=$_POST['name'];$name=$_SESSION['name'];$new_phone=$_POST['phone_no'];$phone=$_SESSION['customer_phone_no'];
             $new_address=$_POST['address'];$address=$_SESSION['customer_address'];
             $pwd=$_POST['password'];$id=$_SESSION['id'];
             print_r($_POST);
