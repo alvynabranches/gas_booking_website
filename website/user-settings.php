@@ -34,7 +34,7 @@
     <div class="scroller">
         <div class="details-div container-fluid h-100">
             <form method="POST">
-                <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username" value="<?php include_once('config.php');echo $_SESSION['username'];?>" disabled="" readonly=""></div>
+                <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username" value="<?php if(isset($_SESSION['username'])){echo $_SESSION['username'];}?>" disabled="" readonly=""></div>
                 <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" value="<?php include('config.php');echo $_SESSION['name'];?>"></div>
                 <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php');echo $_SESSION['type'];?>" name="type" placeholder="Type" disabled="" readonly=""></div>
                 <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php');echo get_location($_SESSION['customer_location_id']);?>" placeholder="Location" name="location" disabled="" readonly=""></div>
