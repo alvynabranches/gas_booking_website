@@ -36,7 +36,7 @@
     }
     function delivered_orders($id){
         $records="";
-        $result=exec_query("SELECT booking_date AS bd FROM booking WHERE id='$id' AND booking_status='delivered';");
+        $result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$id' AND booking_status='delivered';");
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
                 $record=$row['booking_date'];
