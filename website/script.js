@@ -14,8 +14,7 @@ document.getElementById('password').addEventListener('keyup', (e) => {
     if(document.getElementById('password').value.length < 8) {
         document.getElementById('password').style.border = '5px solid red';
     }else{
-        document.getElementById('password').style.borderColor = 'green';
-        document.getElementById('password').style.borderWidth = '5px';
+        document.getElementById('password').style.border = '5px solid green';
     }
 });
 document.getElementById('full_name').addEventListener('keydown', (e) => {
