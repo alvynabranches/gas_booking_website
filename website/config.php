@@ -17,12 +17,7 @@
     function booking(){if(isset($_POST['amount'])&&isset($_POST['book_now'])&&isset($_POST['payment_option'])){if($_POST['book_now'] == '1'){$amount=$_POST['amount'];$payment_option=$_POST['payment_option'];$c_id=$_SESSION['id'];$date_time_now=date('Y-m-d H:i:s');if(exec_query("INSERT INTO booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) VALUES ('$date_time_now', '$amount', '$c_id', 'pending', '$payment_option');")===TRUE){if(REPORT){console_log('Booking Successfully Done!');}alert('Booking Successfully Done!');}else{if(REPORT){console_log('Booking Unsuccessful!');}alert('Booking Unsuccessful!');}}}}
     function contact_us(){if(isset($_POST['name'])&&(isset($_POST['phone']))&&(isset($_POST['email']))&&(isset($_POST['location']))&&(isset($_POST['subject']))&&(isset($_POST['message']))){$name=$_POST['name'];$phone=$_POST['phone'];$email=$_POST['email'];$location=$_POST['location'];$subject=$_POST['subject'];$message=$_POST['message'];$date_time_now=date('Y-m-d H:i:s');if(exec_query("INSERT INTO feedback (feedback_date, name, phone_no, email, feedback_location_id, feedback_subject, feedback_message) VALUES ('$date_time_now', '$name', '$phone', '$email', '$location', '$subject', '$message');")===TRUE){if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}}else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}}}
     function user_contact_us(){if(isset($_SESSION['id'])&&isset($_POST['subject'])&&isset($_POST['message'])){$subject=$_POST['subject'];$message=$_POST['message'];$id=$_SESSION['id'];if(exec_query("INSERT INTO user_feedback (feedback_customer_id, feedback_subject, feedback_message) VALUES ('$id', '$subject', '$message');")){if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}}else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}}}
-    function get_db_user_password($id){
-        while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer where customer_id='$id';"))){
-            $db_p=$row['password'];
-        }
-        return $db_p;
-    }
+
     function change_password(){
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
             $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
@@ -125,4 +120,18 @@
     print_r($_SESSION);
     // session_unset();
     // echo get_db_user_password(9);
+    $c_id=9;
+    
+    echo "<br>";
+    echo $result->num_rows;
+    echo "<br>";
+    
+    function get_db_user_password($c_id){
+        $result=exec_query("SELECT password FROM customer where customer_id='$c_id';");
+        if($result->num_rows==1){
+            while($row=mysqli_fetch_assoc($result)){
+                echo $row['password'];
+            }
+        }
+    }
 ?>
