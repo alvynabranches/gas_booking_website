@@ -39,7 +39,6 @@
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
                 $records.="<tr><td>".$row['bd']."</td></tr>";
-            }
-        }else{$records="No Records Found";}return $records;
+            }}else{$records="No Records Found";}return $records;
     }
 ?>
