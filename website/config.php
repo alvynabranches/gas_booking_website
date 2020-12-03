@@ -105,8 +105,7 @@
                         alert("Unsuccessfully Updated Customer Address!");
                     }
                 }else{
-                    if(REPORT){console_log("Everything is up to date!");}
-                    alert("Everything is up to date!");
+                    if(REPORT){console_log("Everything is up to date!");}alert("Everything is up to date!");
                     redirect("user.php",TRUE);}}else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}}}if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     // console_log(date('Y-m-d H:i:s'));
     // print_r($_SESSION);
