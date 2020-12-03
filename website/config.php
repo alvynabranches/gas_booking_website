@@ -23,9 +23,9 @@
     function change_password(){if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){$op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];if($np==$cnp){$id=$_SESSION['id'];$db_pwd=get_db_user_password($id);if(password_verify($op, $db_pwd)){$new_pwd=password_hash($np, PASSWORD_DEFAULT);if(exec_query("UPDATE customer SET password='$new_pwd' WHERE customer_id='$id'")===TRUE){if(REPORT){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);}else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");}}}
     
     // Untested Code
-    function pending_orders($id){
+    function pending_orders($c_id){
         $records="";
-        $result=exec_query("SELECT booking_date AS bd FROM booking WHERE id='$id' AND booking_status='pending';");
+        $result=exec_query("SELECT booking_date AS bd FROM booking WHERE id='$c_id' AND booking_status='pending';");
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
                 $record=$row['bd'];
@@ -40,7 +40,6 @@
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
                 $record=$row['bd'];
-                echo $record;
                 $records.="<tr><td>".$record."</td></tr>";
             }
         }else{$records="No Records Found";}
@@ -48,9 +47,9 @@
     }
     print_r($_SESSION);
     echo "<br><br><br>";
-    echo pending_orders(9);
+    // echo pending_orders(9);
     echo "<br><br><br>";
-    echo delivered_orders(9);
+    // echo delivered_orders(9);
     echo "<br><br><br>";
 ?>
 <table><?php echo pending_orders(9);?></table>
