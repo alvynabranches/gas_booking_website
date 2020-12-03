@@ -119,10 +119,7 @@
     // console_log(date('Y-m-d H:i:s'));
     print_r($_SESSION);
     // session_unset();
-    // echo get_db_user_password(9);
     
-    echo "<br>";
-    echo $result->num_rows;
     echo "<br>";
     
     function get_db_user_password($c_id){
@@ -134,4 +131,5 @@
         }
         return $p;
     }
+    echo get_db_user_password(9);
 ?>
