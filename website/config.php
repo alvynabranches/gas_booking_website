@@ -74,8 +74,7 @@
                         if(REPORT){console_log("Successfully Updated Customer Phone No. and Customer Address!");}
                         alert("Successfully Updated Customer Phone No. and Customer Address!");
                     }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Phone No. and Customer Address!");}
-                        alert("Unsuccessfully Updated Customer Phone No. and Customer Address!");
+                        if(REPORT){console_log("Unsuccessfully Updated Customer Phone No. and Customer Address!");}alert("Unsuccessfully Updated Customer Phone No. and Customer Address!");
                     }
                 }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address==$address)){
                     if(exec_query("UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';")){
