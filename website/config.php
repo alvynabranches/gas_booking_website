@@ -26,6 +26,8 @@
     function pending_orders($id){
         return exec_query("SELECT booking_date AS bd FROM booking WHERE id='$id' AND booking_status='pending';");
     }
-    function delivered_orders($id){return exec_query("SELECT booking_date AS bd FROM booking WHERE id='$id' AND booking_status='delivered';");}
+    function delivered_orders($id){
+        return exec_query("SELECT booking_date AS bd FROM booking WHERE id='$id' AND booking_status='delivered';");
+    }
     
 ?>
