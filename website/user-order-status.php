@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include_once('config.php');echo "";?>
+                        <?php include_once('config.php');echo delivered_orders($_SESSION['id']);?>
                     </tbody>
                 </table>
             </div>
