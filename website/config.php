@@ -30,9 +30,7 @@
             while($row=mysqli_fetch_assoc($result)){
 
             }
-        }else{
-            $records="No Records Found";
-        }
+        }else{$records="No Records Found";}
         return ;
     }
     function delivered_orders($id){
