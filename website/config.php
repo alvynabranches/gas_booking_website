@@ -21,6 +21,7 @@
             $name=$_POST['name'];
             $phone=$_POST['phone'];
             $email=$_POST['email'];
+            $location=$_POST['location'];
         }
     }
 
