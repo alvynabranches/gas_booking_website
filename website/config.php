@@ -46,9 +46,9 @@
         return $records;
     }
     print_r($_SESSION);
-    echo "<br><br><br>";
+    // echo "<br><br><br>";
     // echo pending_orders(9);
-    echo "<br><br><br>";
+    // echo "<br><br><br>";
     // echo delivered_orders(9);
     echo "<br><br><br>";
 ?>
