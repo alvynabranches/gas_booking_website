@@ -33,7 +33,11 @@
                     $new_pwd=password_hash($np, PASSWORD_DEFAULT);
                     if(exec_query("UPDATE customer SET password='$new_pwd' where id='$id'")===TRUE){
                         if(REPORT){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);
-                    }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};}
+                    }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}
+                }else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}
+            }else{
+                if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");}
+        }
     }
 
     function change_details(){
