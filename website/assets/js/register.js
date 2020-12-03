@@ -81,7 +81,9 @@ document.getElementById('username').addEventListener('focusout', (e) => {
     }
 });
 document.getElementById('phone_no').addEventListener('keyup', (e)=>{
-    
+    if(document.getElementById('phone_no').value.length != 10){
+        document.getElementById('username').style.border = '5px solid red';
+    }
 });
 // document.getElementById('email').addEventListener('keyup', (e) => {
 //     let reg = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\a([A-Za-z]{2,4})$/;
