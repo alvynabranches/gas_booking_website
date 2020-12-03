@@ -20,15 +20,18 @@
     function get_db_user_password($id){
         $result=exec_query("SELECT password FROM customer where customer_id='$id';");
         while($row=mysqli_fetch_assoc()){
-            
+            $db_pwd=$row['password'];
         }
+        return $db_pwd;
     }
     function change_password(){
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
             $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
             if($np==$cnp){
                 $id=$_SESSION['id'];
-                while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE id='$id'"))){$db_pwd=$row['password'];}
+                while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE id='$id'"))){
+                    $db_pwd=$row['password'];
+                }
                 if(password_verify($op, $db_pwd)){
                     $new_pwd=password_hash($np, PASSWORD_DEFAULT);
                     if(exec_query("UPDATE customer SET password='$new_pwd' where id='$id'")===TRUE){
