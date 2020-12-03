@@ -56,8 +56,7 @@ document.getElementById('full_address').addEventListener('focus', (e) => {
         document.getElementById('full_address').style.borderColor = 'green';
         document.getElementById('full_address').style.borderWidth = '5px';
     }else{
-        document.getElementById('full_address').style.borderColor = 'red';
-        document.getElementById('full_address').style.borderWidth = '5px';
+        document.getElementById('full_address').style.border = '5px solid red';
     }
 });
 document.getElementById('full_address').addEventListener('focusout', (e) => {
