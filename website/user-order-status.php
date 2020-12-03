@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php ?>
+                        <?php echo ""; ?>
                     </tbody>
                 </table>
             </div>
