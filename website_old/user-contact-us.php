@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <?php include_once("config.php"); redirect('contact-us.php', FALSE); ?>
 </head>
 
 <body>
@@ -20,10 +21,10 @@
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.html">Contact Us</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link border rounded btn-primary btn-rounded" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container">Username</a>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.php">Contact Us</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link btn-primary" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></a>
                         <div
-                            class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="">Profile</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>
+                            class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="user.php">Profile</a><a class="dropdown-item" role="presentation" href="user-contact-us.php?action=logout">Logout<?php include_once("config.php"); logout_user(); redirect('index.php', FALSE); ?></a></div>
         </li>
         </ul>
         </div>
@@ -32,10 +33,9 @@
     <div class="scroller">
         <div class="form-div container-fluid h-100">
             <form>
-                <div class="form-group"><input class="form-control-plaintext" type="text" value="Name" readonly="" placeholder="Name"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
+                <div class="form-group login-form"><input class="form-control" type="text" placeholder="Subject" name="subject"></div>
+                <div class="form-group"><textarea class="form-control" placeholder="Message" name="message"></textarea></div>
+                <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" type="submit">Submit</button><button class="btn btn-warning btn-rounded" type="reset">Clear</button></div>
             </form>
         </div>
     </div>
@@ -43,5 +43,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
 </body>
-
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile</title>
+    <title>gas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700">
@@ -21,21 +21,24 @@
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.html">Contact Us</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link border rounded btn-primary btn-rounded" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container">Username</a>
-                        <div
-                            class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="">Profile</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>
-        </li>
-        </ul>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link btn-primary" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container">username</a>
+                        <div class="dropdown-menu"
+                            role="menu"><a class="dropdown-item" role="presentation" href="user.html">Profile</a><a class="dropdown-item" role="presentation" href="user-booking.html">Booking</a><a class="dropdown-item" role="presentation" href="user-order-status.html">Order Status</a>
+                            <a
+                                class="dropdown-item active" role="presentation" href="user-change-password.html">Change Password</a><a class="dropdown-item" role="presentation" href="user-settings.html">Settings</a><a class="dropdown-item" role="presentation" href="logout.php?action=logout">Logout</a></div>
+                    </li>
+                </ul>
         </div>
         </div>
     </nav>
     <div class="scroller">
         <div class="form-div container-fluid h-100">
-            <form>
-                <div class="form-group"><input class="form-control-plaintext" type="text" value="Name" readonly="" placeholder="Name"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
+            <form method="POST">
+                <div class="form-group"><input class="form-control" type="password" placeholder="Old Password" name="old_password"></div>
+                <div class="form-group"><input class="form-control" type="password" name="new_password" placeholder="New Password"></div>
+                <div class="form-group"><input class="form-control" type="password" name="confirm_new_password" placeholder="Confirm New Password">
+                    <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="reset">Reset</button></div>
+                </div>
             </form>
         </div>
     </div>

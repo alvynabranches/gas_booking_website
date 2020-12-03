@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <?php include_once("config.php"); redirect('index.php', FALSE); ?>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.html">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.php">Contact Us</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link border rounded btn-primary btn-rounded" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container">Username</a>
                         <div
                             class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="">Profile</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>
