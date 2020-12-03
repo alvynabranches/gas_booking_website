@@ -101,8 +101,7 @@
                         if(REPORT){console_log("Successfully Updated Customer Address!");}
                         alert("Successfully Updated Customer Address!");
                     }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Address!");}
-                        alert("Unsuccessfully Updated Customer Address!");
+                        if(REPORT){console_log("Unsuccessfully Updated Customer Address!");}alert("Unsuccessfully Updated Customer Address!");
                     }
                 }else{
                     if(REPORT){console_log("Everything is up to date!");}alert("Everything is up to date!");
