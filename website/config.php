@@ -38,7 +38,7 @@
     }
     function settings(){
         if(isset($_POST['username'])){
-
+            
         }
     }
     function get_location($location_id){
