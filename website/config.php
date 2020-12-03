@@ -49,4 +49,4 @@
 <table>
     <?php echo pending_orders(9); ?>
 </table>
-<table><?php echo delivered_orders(9); ?></table>
+<table><?php echo delivered_orders(9);?></table>
