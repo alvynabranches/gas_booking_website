@@ -53,23 +53,27 @@
             if(password_verify($pwd, $db_pwd)){
                 if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
                     $sql="UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';";
-                }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address==$address)){
-                    $sql="UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';";
-                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
-                    $sql="UPDATE customer SET customer_no='$new_phone' WHERE customer_id='$id';";
-                }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
-                    $sql="UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';";
                 }elseif(($new_name!=$name)&&($new_phone!=$phone)&&($new_address==$address)){
                     $sql="UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' WHERE customer_id='$id';";
                 }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address!=$address)){
                     $sql="UPDATE customer SET customer_name='$new_name' customer_address='$new_address' WHERE customer_id='$id';";
                 }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address!=$address)){
                     $sql="UPDATE customer SET customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';";
+                }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address==$address)){
+                    $sql="UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';";
+                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
+                    $sql="UPDATE customer SET customer_no='$new_phone' WHERE customer_id='$id';";
+                }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
+                    $sql="UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';";
                 }else{
-                    console_log("Everything is up to date!");
+                    if(REPORT){
+                        console_log("Everything is up to date!");
+                    }
                 }
                 if(($new_name!=$name)||($new_phone!=$phone)||($new_address!=$address)){
-
+                    if(exec_query($sql)===TRUE){
+                        alert("Successfully");
+                    }
                 }
             }else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}
         }
