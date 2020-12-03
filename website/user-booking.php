@@ -39,6 +39,7 @@
                 <div class="form-group"><select class="form-control" id="payment_option" name="payment_option"><option value="" selected="">Payment Option</option><option value="cod">Cash On Delivery</option><option value="prepaid">Prepaid</option></select></div>
                 <div class="form-group"><select class="form-control" id="book_now" name="book_now"><option value="" selected="">Book Now?</option><option value="0">No</option><option value="1">Yes</option></select></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded book-btn" data-bs-hover-animate="bounce" type="submit">Book Now</button></div>
+                <?php include_once('config.php');booking();?>
             </form>
         </div>
     </div>

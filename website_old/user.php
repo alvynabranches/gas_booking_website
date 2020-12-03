@@ -22,7 +22,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="user-contact-us.php">Contact Us</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link btn-primary" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="wobble" href="" style="color: #ffffff;font-weight: bold;" name="username-container"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];}?></a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="">Profile</a><a class="dropdown-item" role="presentation" href="user.php?action=logout">Logout<?php include_once("config.php"); logout_user(); redirect('index.php', FALSE);?></a></div>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="">Profile</a><a class="dropdown-item" role="presentation" href="user.php?action=logout">Logout<?php include_once("config.php");logout_user();redirect('index.php',FALSE);?></a></div>
                     </li>
                 </ul>
         </div>
