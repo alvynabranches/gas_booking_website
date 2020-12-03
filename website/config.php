@@ -30,7 +30,7 @@
                         if(REPORT){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);
                     }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};}
     }
-    
+
     function change_details(){
         if(isset($_POST['name'])&&isset($_POST['phone_no'])&&isset($_POST['address'])&&isset($_POST['password'])){
             $new_name=$_POST['name'];$name=$_SESSION['name'];
@@ -40,7 +40,9 @@
             while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE customer_id='$id';"))){$db_pwd=$row['password'];}
             if(password_verify($pwd, $db_pwd)){
                 if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
-                    $sql="UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';";
+                    if(exec_query("UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';")===TRUE){
+                        if(REPORT){}
+                    }
                 }elseif(($new_name!=$name)&&($new_phone!=$phone)&&($new_address==$address)){
                     $sql="UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' WHERE customer_id='$id';";
                 }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address!=$address)){
