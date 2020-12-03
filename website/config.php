@@ -39,13 +39,18 @@
         $result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$id' AND booking_status='delivered';");
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
-                $record=$row['booking_date'];
+                $record=$row['bd'];
+                echo $record;
                 $records.="<tr><td>".$record."</td></tr>";
             }
         }else{$records="No Records Found";}
         return $records;
     }
     print_r($_SESSION);
+    echo "<br><br><br>";
+    echo pending_orders(9);
+    echo "<br><br><br>";
+    echo delivered_orders(9);
     echo "<br><br><br>";
 ?>
 <table><?php echo pending_orders(9);?></table>
