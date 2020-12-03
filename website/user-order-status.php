@@ -59,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include_once('config.php');echo pending_orders($_SESSION['id']);?>
+                        <?php include_once('config.php');echo delivered_orders($_SESSION['id']);?>
                     </tbody>
                 </table>
             </div>
