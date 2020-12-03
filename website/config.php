@@ -40,7 +40,7 @@
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
                 $record=$row['booking_date'];
-                $records.="<tr><td>$record</td></tr>";
+                $records.="<tr><td>".$record."</td></tr>";
             }
         }else{$records="No Records Found";}
         return $records;
