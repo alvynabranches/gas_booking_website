@@ -45,8 +45,10 @@
     }
     function get_location($location_id){
         $result=exec_query("select location_name as ln where location_id='$location_id'");
-        while($row=mysqli_fetch_assoc($result)){
-            $ln=$row['ln'];
+        if($result->rows==1){
+            while($row=mysqli_fetch_assoc($result)){
+                $ln=$row['ln'];
+            }
         }
         return ln;
     }
