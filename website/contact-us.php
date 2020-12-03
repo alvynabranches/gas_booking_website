@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
-    <?php include_once("config.php"); redirect('user-contact-us.php', TRUE); ?>
+    <?php include_once("config.php"); redirect('user-contact-us.php', TRUE);?>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                 <div class="form-group"><input class="form-control" type="text" placeholder="Name" name="name"></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="Phone" name="phone"></div>
                 <div class="form-group"><input class="form-control" type="email" placeholder="Email" name="email"></div>
-                <div class="form-group"><select class="form-control" name="location"><option value="" selected="">Location</option></select></div>
+                <div class="form-group"><select class="form-control" name="location"><option value="" selected="">Location</option></select><?php include_once('config.php');echo location_options();?></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="Subject" name="subject"></div>
                 <div class="form-group"><textarea class="form-control" name="message" placeholder="Message"></textarea></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="button">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="button">Clear</button></div>
