@@ -29,6 +29,9 @@
     function user_contact_us(){
         if(isset($_SESSION['id'])&&isset($_POST['subject'])&&isset($_POST['message'])){
             $subject=$_POST['subject'];$message=$_POST['message'];$id=$_SESSION['id'];
+            if(){
+                if(REPORT){console_log("Feedback Sent Successfully!");}
+            }
         }
     }
 
