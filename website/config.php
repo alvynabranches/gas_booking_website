@@ -44,4 +44,3 @@
         return $records;
     }
 ?>
-<table><?php echo pending_orders(9);?></table>
