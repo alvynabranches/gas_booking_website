@@ -87,6 +87,13 @@ document.getElementById('phone_no').addEventListener('keyup', (e)=>{
         document.getElementById('phone_no').style.border = '5px solid green';
     }
 });
+document.getElementById('phone_no').addEventListener('focus', (e)=>{
+    if(document.getElementById('phone_no').value.length != 10){
+        document.getElementById('phone_no').style.border = '5px solid red';
+    }else{
+        document.getElementById('phone_no').style.border = '5px solid green';
+    }
+});
 // document.getElementById('email').addEventListener('keyup', (e) => {
 //     let reg = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\a([A-Za-z]{2,4})$/;
 //     if(reg.test(document.getElementById('email'))){
