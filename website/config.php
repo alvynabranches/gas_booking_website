@@ -37,6 +37,7 @@
             $new_phone=$_POST['phone_no'];$phone=$_SESSION['customer_phone_no'];
             $new_address=$_POST['address'];$address=$_SESSION['customer_address'];
             $pwd=$_POST['password'];$id=$_SESSION['id'];
+            print_r($_POST);
             while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE customer_id='$id';"))){$db_pwd=$row['password'];}
             if(password_verify($pwd, $db_pwd)){
                 if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
