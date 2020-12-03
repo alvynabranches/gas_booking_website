@@ -22,6 +22,7 @@
                 if(exec_query("INSERT INTO booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) VALUES ('$time_now', '$amount', '$c_id', 'pending', '$payment_option');")===TRUE){
                     if(REPORT){console_log('Booking Successfully Done!');}alert('Booking Successfully Done!');
                 }else{if(REPORT){console_log('Booking Unsuccessfully!');}alert('Booking Unsuccessfully!');}}}}
+    
     function change_password(){
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
             $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
