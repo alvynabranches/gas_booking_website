@@ -43,70 +43,70 @@
             $new_address=$_POST['address'];$address=$_SESSION['customer_address'];
             $pwd=$_POST['password'];$id=$_SESSION['id'];
             print_r($_POST);
-            while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE customer_id='$id';"))){$db_pwd=$row['password'];}
-            if(password_verify($pwd, $db_pwd)){
-                if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
-                    if(exec_query("UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';")===TRUE){
-                        if(REPORT){console_log("Successfully Updated Customer Name, Customer Phone No. and Customer Address!");}
-                        alert("Successfully Updated Customer Name, Customer Phone No. and Customer Address!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Name, Customer Phone No. and Customer Address!");}
-                        alert("Unsuccessfully Updated Customer Name, Customer Phone No. and Customer Address!");
-                    }
-                }elseif(($new_name!=$name)&&($new_phone!=$phone)&&($new_address==$address)){
-                    if(exec_query("UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' WHERE customer_id='$id';")){
-                        if(REPORT){console_log("Successfully Updated Customer Name and Customer Phone No.!");}
-                        alert("Successfully Updated Customer Name and Customer Phone No.!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Name and Customer Phone No.!");}
-                        alert("Unsuccessfully Updated Customer Name and Customer Phone No.!");
-                    }
-                }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address!=$address)){
-                    if(exec_query("UPDATE customer SET customer_name='$new_name' customer_address='$new_address' WHERE customer_id='$id';")){
-                        if(REPORT){console_log("Successfully Updated Customer Name and Customer Address!");}
-                        alert("Successfully Updated Customer Name and Customer Address!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Name and Customer Address!");}
-                        alert("Unsuccessfully Updated Customer Name and Customer Address!");
-                    }
-                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address!=$address)){
-                    if(exec_query("UPDATE customer SET customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';")){
-                        if(REPORT){console_log("Successfully Updated Customer Phone No. and Customer Address!");}
-                        alert("Successfully Updated Customer Phone No. and Customer Address!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Phone No. and Customer Address!");}
-                        alert("Unsuccessfully Updated Customer Phone No. and Customer Address!");
-                    }
-                }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address==$address)){
-                    if(exec_query("UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';")){
-                        if(REPORT){console_log("Successfully Updated Customer Name!");}
-                        alert("Successfully Updated Customer Name!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Name!");}
-                        alert("Unsuccessfully Updated Customer Name!");
-                    }
-                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
-                    if(exec_query("UPDATE customer SET customer_no='$new_phone' WHERE customer_id='$id';")){
-                        if(REPORT){console_log("Successfully Updated Customer Phone No.!");}
-                        alert("Successfully Updated Customer Phone No.!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Phone No.!");}
-                        alert("Unsuccessfully Updated Customer Phone No.!");
-                    }
-                }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
-                    if(exec_query("UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';")){
-                        if(REPORT){console_log("Successfully Updated Customer Address!");}
-                        alert("Successfully Updated Customer Address!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Address!");}
-                        alert("Unsuccessfully Updated Customer Address!");
-                    }
-                }else{
-                    if(REPORT){console_log("Everything is up to date!");}
-                    alert("Everything is up to date!");
-                    redirect("user.php",TRUE);
-                }
-            }else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}
+            // while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE customer_id='$id';"))){$db_pwd=$row['password'];}
+            // if(password_verify($pwd, $db_pwd)){
+            //     if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
+            //         if(exec_query("UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';")===TRUE){
+            //             if(REPORT){console_log("Successfully Updated Customer Name, Customer Phone No. and Customer Address!");}
+            //             alert("Successfully Updated Customer Name, Customer Phone No. and Customer Address!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Name, Customer Phone No. and Customer Address!");}
+            //             alert("Unsuccessfully Updated Customer Name, Customer Phone No. and Customer Address!");
+            //         }
+            //     }elseif(($new_name!=$name)&&($new_phone!=$phone)&&($new_address==$address)){
+            //         if(exec_query("UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' WHERE customer_id='$id';")){
+            //             if(REPORT){console_log("Successfully Updated Customer Name and Customer Phone No.!");}
+            //             alert("Successfully Updated Customer Name and Customer Phone No.!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Name and Customer Phone No.!");}
+            //             alert("Unsuccessfully Updated Customer Name and Customer Phone No.!");
+            //         }
+            //     }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address!=$address)){
+            //         if(exec_query("UPDATE customer SET customer_name='$new_name' customer_address='$new_address' WHERE customer_id='$id';")){
+            //             if(REPORT){console_log("Successfully Updated Customer Name and Customer Address!");}
+            //             alert("Successfully Updated Customer Name and Customer Address!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Name and Customer Address!");}
+            //             alert("Unsuccessfully Updated Customer Name and Customer Address!");
+            //         }
+            //     }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address!=$address)){
+            //         if(exec_query("UPDATE customer SET customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';")){
+            //             if(REPORT){console_log("Successfully Updated Customer Phone No. and Customer Address!");}
+            //             alert("Successfully Updated Customer Phone No. and Customer Address!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Phone No. and Customer Address!");}
+            //             alert("Unsuccessfully Updated Customer Phone No. and Customer Address!");
+            //         }
+            //     }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address==$address)){
+            //         if(exec_query("UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';")){
+            //             if(REPORT){console_log("Successfully Updated Customer Name!");}
+            //             alert("Successfully Updated Customer Name!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Name!");}
+            //             alert("Unsuccessfully Updated Customer Name!");
+            //         }
+            //     }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
+            //         if(exec_query("UPDATE customer SET customer_no='$new_phone' WHERE customer_id='$id';")){
+            //             if(REPORT){console_log("Successfully Updated Customer Phone No.!");}
+            //             alert("Successfully Updated Customer Phone No.!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Phone No.!");}
+            //             alert("Unsuccessfully Updated Customer Phone No.!");
+            //         }
+            //     }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
+            //         if(exec_query("UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';")){
+            //             if(REPORT){console_log("Successfully Updated Customer Address!");}
+            //             alert("Successfully Updated Customer Address!");
+            //         }else{
+            //             if(REPORT){console_log("Unsuccessfully Updated Customer Address!");}
+            //             alert("Unsuccessfully Updated Customer Address!");
+            //         }
+            //     }else{
+            //         if(REPORT){console_log("Everything is up to date!");}
+            //         alert("Everything is up to date!");
+            //         redirect("user.php",TRUE);
+            //     }
+            // }else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}
         }
     }
     function get_location($location_id){
