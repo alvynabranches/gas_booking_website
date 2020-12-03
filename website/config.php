@@ -40,7 +40,7 @@
     }
     function settings(){
         if(isset($_POST['username'])&&isset($_POST['name'])&&isset($_POST['type'])){
-
+            
         }
     }
     function get_location($location_id){
