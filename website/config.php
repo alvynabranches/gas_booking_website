@@ -40,7 +40,7 @@
     function pending_orders($id){
         $result=exec_query("");
     }
-    function delivered_orders(){
+    function delivered_orders($id){
         $result=exec_query("");
     }
     // console_log(date('Y-m-d H:i:s'));
