@@ -45,6 +45,33 @@
             $phone=$_SESSION['customer_phone_no'];
             $new_address=$_POST['address'];
             $address=$_SESSION['customer_address'];
+            $pwd=$_POST['password'];
+            $id=$_SESSION['id'];
+            while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE customer_id='$id';"))){
+                $db_pwd=$row['password'];
+            }
+            if(password_verify($pwd, $db_pwd)){
+                if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
+                    $sql="UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';";
+                }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address==$address)){
+                    $sql="UPDATE customer SET customer_name='$new_name' WHERE customer_id='$id';";
+                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address==$address)){
+                    $sql="UPDATE customer SET customer_no='$new_phone' WHERE customer_id='$id';";
+                }elseif(($new_name==$name)&&($new_phone==$phone)&&($new_address!=$address)){
+                    $sql="UPDATE customer SET customer_address='$new_address' WHERE customer_id='$id';";
+                }elseif(($new_name!=$name)&&($new_phone!=$phone)&&($new_address==$address)){
+                    $sql="UPDATE customer SET customer_name='$new_name' customer_no='$new_phone' WHERE customer_id='$id';";
+                }elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address!=$address)){
+                    $sql="UPDATE customer SET customer_name='$new_name' customer_address='$new_address' WHERE customer_id='$id';";
+                }elseif(($new_name==$name)&&($new_phone!=$phone)&&($new_address!=$address)){
+                    $sql="UPDATE customer SET customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';";
+                }else{
+                    console_log("Everything is up to date!");
+                }
+                if(($new_name!=$name)||($new_phone!=$phone)||($new_address!=$address)){
+
+                }
+            }else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}
         }
     }
     function get_location($location_id){
