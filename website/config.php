@@ -106,13 +106,15 @@
             }else{alert("Password does not match!");console_log("Password does not match!");redirect('user-settings.php',TRUE);}
         }
     }
-    function get_location($location_id){
-        $result=exec_query("select location_name as ln where location_id='$location_id'");
-        if($result->rows==1){while($row=mysqli_fetch_assoc($result)){$ln=$row['ln'];}}
+    function get_location_details($location_id){
+        $result=exec_query("SELECT location_name as ln FROM location WHERE location_id='$location_id'");
+        if($result->rows==1){while($row=mysqli_fetch_assoc($result)){$ln=$row['ln']; echo $row['ln'];}}
+        echo $ln;
         return $ln;
     }
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     // console_log(date('Y-m-d H:i:s'));
     // print_r($_SESSION);
     // session_unset();
+    echo get_location_details(9);
 ?>
