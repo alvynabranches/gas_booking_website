@@ -42,7 +42,7 @@
                 <div class="form-group"><select class="form-control" id="location" placeholder="location" required="" name="location"><option value="" selected="">Location</option><?php include_once('config.php');echo location_options();?></select></div>
                 <div class="form-group"><select class="form-control" id="type" required="" name="type"><option value="" selected="">Type</option><option value="domestic">Domestic</option><option value="commercial">Commercial</option></select></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" id="submit-btn" type="submit" name="submit_btn">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" id="reset-btn" type="reset" name="reset_btn">Clear</button></div>
-                <?php include_once('config.php'); register();?>
+                <?php include_once('config.php');register();?>
             </form>
         </div>
     </div>
