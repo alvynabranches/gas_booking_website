@@ -21,7 +21,7 @@
             $name=$_POST['name'];$phone=$_POST['phone'];$email=$_POST['email'];$location=$_POST['location'];$subject=$_POST['subject'];$message=$_POST['message'];
             $date_time_now=date('Y-m-d H:i:s');
             if(exec_query("INSERT INTO feedback (feedback_date, name, phone_no, email, feedback_location_id, feedback_subject, feedback_message) VALUES ('$date_time_now', '$name', '$phone', '$email', '$location', '$subject', '$message');")===TRUE){
-                if(REPORT){console_log("Feedback Sent Successfully!");}
+                if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}
             }else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}
         }
     }
