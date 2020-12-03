@@ -24,6 +24,7 @@
             $location=$_POST['location'];
             $subject=$_POST['subject'];
             $message=$_POST['message'];
+            exec_query("INSERT INTO ");
         }
     }
 
