@@ -37,7 +37,9 @@
         $records="";
         $result=exec_query("SELECT booking_date AS bd FROM booking WHERE id='$id' AND booking_status='delivered';");
         if($result->num_rows>0){
-            
+            while($row=mysqli_fetch_assoc($result)){
+                
+            }
         }else{$records="No Records Found";}
         return $records;
     }
