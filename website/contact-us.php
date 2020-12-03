@@ -39,6 +39,7 @@
                 <div class="form-group"><input class="form-control" type="text" placeholder="Subject" name="subject"></div>
                 <div class="form-group"><textarea class="form-control" name="message" placeholder="Message"></textarea></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
+                <?php include_once('config.php');contact_us();?>
             </form>
         </div>
     </div>
