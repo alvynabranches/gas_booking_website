@@ -1,3 +1,6 @@
+function register(){
+    
+}
 document.getElementById('confirm_password').addEventListener('focusout', (e) => {
     if(document.getElementById('password').value != document.getElementById('confirm_password').value){
         alert('Confirm password does not match the password');
