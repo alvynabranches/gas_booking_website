@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <?php include_once("config.php"); redirect('login.php', FALSE);?>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                         <div class="dropdown-menu"
                             role="menu"><a class="dropdown-item" role="presentation" href="user.php">Profile</a><a class="dropdown-item active" role="presentation" href="user-booking.php">Booking</a><a class="dropdown-item" role="presentation" href="user-order-status.php">Order Status</a>
                             <a
-                                class="dropdown-item" role="presentation" href="user-change-password.php">Change Password</a><a class="dropdown-item" role="presentation" href="user-settings.php">Settings</a><a class="dropdown-item" role="presentation" href="logout.php?action=logout">Logout</a></div>
+                                class="dropdown-item" role="presentation" href="user-change-password.php">Change Password</a><a class="dropdown-item" role="presentation" href="user-settings.php">Settings</a><a class="dropdown-item" role="presentation" href="user-booking.php?action=logout">Logout<?php include_once("config.php");logout_user();redirect('index.php',FALSE);?></a></div>
                     </li>
                 </ul>
         </div>
@@ -34,8 +35,7 @@
     <div class="scroller">
         <div class="form-div container-fluid h-100">
             <form class="login-form" method="POST">
-                <div class="form-group d-flex"><label class="d-flex justify-content-xl-start align-items-xl-center" style="font-weight: bold;font-size: 3vh;padding-top: 7px;">Amount&nbsp;&nbsp;</label><input class="form-control-plaintext d-flex read-only-text-input" type="text" id="amount"
-                        value="<?php if($_SESSION[&quot;type&quot;]==&quot;domestic&quot;){echo 608;}else{echo 1200}?>" readonly="" name="amount" placeholder="amount"></div>
+                <div class="form-group d-flex"><label class="d-flex justify-content-xl-start align-items-xl-center" style="font-weight: bold;font-size: 3vh;padding-top: 7px;">Amount&nbsp;&nbsp;</label><input class="form-control-plaintext d-flex read-only-text-input" type="text" id="amount"value="<?php if($_SESSION['type']=='domestic'){echo 608;}else{echo 1200;}?>" readonly="" name="amount" placeholder="amount"></div>
                 <div class="form-group"><select class="form-control" id="payment_option" name="payment_option"><option value="" selected="">Payment Option</option><option value="cod">Cash On Delivery</option><option value="prepaid">Prepaid</option></select></div>
                 <div class="form-group"><select class="form-control" id="book_now" name="book_now"><option value="" selected="">Book Now?</option><option value="0">No</option><option value="1">Yes</option></select></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded book-btn" data-bs-hover-animate="bounce" type="submit">Book Now</button></div>
