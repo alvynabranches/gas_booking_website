@@ -38,6 +38,9 @@
         }
     }
     function pending_orders(){
+
+    }
+    function delivered_orders(){
         
     }
     // console_log(date('Y-m-d H:i:s'));
