@@ -42,8 +42,7 @@
                 }elseif(($new_name!=$name)&&($new_phone!=$phone)&&($new_address==$address)){
                     if(exec_query("UPDATE customer SET customer_name='$new_name', customer_no='$new_phone' WHERE customer_id='$id';")){
                         $_SESSION['name']=$new_name;$_SESSION['phone_no']=$new_phone;if(REPORT){console_log("Successfully Updated Customer Name and Customer Phone No.!");}alert("Successfully Updated Customer Name and Customer Phone No.!");
-                    }else{
-                        if(REPORT){console_log("Unsuccessfully Updated Customer Name and Customer Phone No.!");}alert("Unsuccessfully Updated Customer Name and Customer Phone No.!");
+                    }else{if(REPORT){console_log("Unsuccessfully Updated Customer Name and Customer Phone No.!");}alert("Unsuccessfully Updated Customer Name and Customer Phone No.!");
                     }}elseif(($new_name!=$name)&&($new_phone==$phone)&&($new_address!=$address)){
                     if(exec_query("UPDATE customer SET customer_name='$new_name', customer_address='$new_address' WHERE customer_id='$id';")){
                         $_SESSION['name']=$new_name;$_SESSION['address']=$new_address;
