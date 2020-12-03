@@ -45,6 +45,8 @@
         }else{$records="No Records Found";}
         return $records;
     }
+    print_r($_SESSION);
+    echo "<br><br><br>";
 ?>
 <table><?php echo pending_orders(9);?></table>
 <table><?php echo delivered_orders(9);?></table>
