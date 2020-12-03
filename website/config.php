@@ -16,6 +16,14 @@
     function register(){if(isset($_POST['full_name'])&&isset($_POST['full_address'])&&isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])&&isset($_POST['confirm_password'])&&isset($_POST['location'])&&isset($_POST['type'])&&isset($_POST['phone_no'])){$name=$_POST['full_name'];$address=$_POST['full_address'];$user=$_POST['username'];$email=$_POST['email'];$pwd=$_POST['password'];$cnf_pwd=$_POST['confirm_password'];$location=$_POST['location'];$type=$_POST['type'];$phone=$_POST['phone_no'];$pwd=password_hash($pwd, PASSWORD_DEFAULT);if(exec_query("INSERT INTO customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type, customer_no) VALUES ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type', '$phone')")===TRUE){if(REPORT){console_info("Record Created Successfully");}echo "<script>let baseurl=window.location.origin;let loginurl=baseurl+'/project/website/login.php';setTimeout(function(){window.location.href=loginurl;},0);</script>";}else{if(REPORT){console_warn("Record Not Created Successfully");}}}}
     function booking(){if(isset($_POST['amount'])&&isset($_POST['book_now'])&&isset($_POST['payment_option'])){if($_POST['book_now'] == '1'){$amount=$_POST['amount'];$payment_option=$_POST['payment_option'];$c_id=$_SESSION['id'];$date_time_now=date('Y-m-d H:i:s');if(exec_query("INSERT INTO booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) VALUES ('$date_time_now', '$amount', '$c_id', 'pending', '$payment_option');")===TRUE){if(REPORT){console_log('Booking Successfully Done!');}alert('Booking Successfully Done!');}else{if(REPORT){console_log('Booking Unsuccessful!');}alert('Booking Unsuccessful!');}}}}
     
+    function contact_us(){
+
+    }
+
+    function user_contact_us(){
+
+    }
+
     function change_password(){
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
             $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
