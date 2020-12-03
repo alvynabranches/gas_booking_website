@@ -30,6 +30,8 @@
             while($row=mysqli_fetch_assoc($result)){
 
             }
+        }else{
+            $records="No Records Found";
         }
         return ;
     }
