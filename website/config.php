@@ -27,7 +27,9 @@
     }
 
     function user_contact_us(){
-
+        if(isset($_SESSION['id'])&&isset($_POST['subject'])&&isset($_POST['message'])){
+            $subject=$_POST['subject'];
+        }
     }
 
     function change_password(){
