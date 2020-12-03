@@ -31,7 +31,7 @@
             $subject=$_POST['subject'];$message=$_POST['message'];$id=$_SESSION['id'];
             if(){
                 if(REPORT){console_log("Feedback Sent Successfully!");}
-            }else{if(REPORT){console_log("Feedback Not Sent");}}
+            }else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}
         }
     }
 
