@@ -18,9 +18,8 @@
     function contact_us(){if(isset($_POST['name'])&&(isset($_POST['phone']))&&(isset($_POST['email']))&&(isset($_POST['location']))&&(isset($_POST['subject']))&&(isset($_POST['message']))){$name=$_POST['name'];$phone=$_POST['phone'];$email=$_POST['email'];$location=$_POST['location'];$subject=$_POST['subject'];$message=$_POST['message'];$date_time_now=date('Y-m-d H:i:s');if(exec_query("INSERT INTO feedback (feedback_date, name, phone_no, email, feedback_location_id, feedback_subject, feedback_message) VALUES ('$date_time_now', '$name', '$phone', '$email', '$location', '$subject', '$message');")===TRUE){if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}}else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}}}
     function user_contact_us(){if(isset($_SESSION['id'])&&isset($_POST['subject'])&&isset($_POST['message'])){$subject=$_POST['subject'];$message=$_POST['message'];$id=$_SESSION['id'];if(exec_query("INSERT INTO user_feedback (feedback_customer_id, feedback_subject, feedback_message) VALUES ('$id', '$subject', '$message');")){if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}}else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}}}
     function get_db_user_password($id){
-        $result=exec_query("SELECT password FROM customer where customer_id='$id';");
-        while($row=mysqli_fetch_assoc()){
-            $db_pwd=$row['password'];
+        while($row=mysqli_fetch_assoc(exec_query("SELECT password as p FROM customer where customer_id='$id';"))){
+            $db_pwd=$row['p'];
         }
         return $db_pwd;
     }
@@ -117,7 +116,7 @@
     }
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     // console_log(date('Y-m-d H:i:s'));
-    // print_r($_SESSION);
+    print_r($_SESSION);
     // session_unset();
-    echo get_db_user_password($_SESSION['id']);
+    echo get_db_user_password(9);
 ?>
