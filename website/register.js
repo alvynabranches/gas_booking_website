@@ -1,4 +1,3 @@
-function register(){
     document.getElementById('confirm_password').addEventListener('focusout', (e) => {
         if(document.getElementById('password').value != document.getElementById('confirm_password').value){
             alert('Confirm password does not match the password');
@@ -89,4 +88,3 @@ function register(){
     //         document.getElementById('email').style.border = '5px solid red';
     //     }
     // });
-}
