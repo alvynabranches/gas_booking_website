@@ -20,8 +20,8 @@
             if($_POST['book_now'] == '1'){$amount=$_POST['amount'];$payment_option=$_POST['payment_option'];
                 $c_id=$_SESSION['id'];$date_time_now=date('Y-m-d H:i:s');
                 if(exec_query("INSERT INTO booking(booking_date, booking_amount, booking_customer_id, booking_status, booking_type) VALUES ('$time_now', '$amount', '$c_id', 'pending', '$payment_option');")===TRUE){
-                    console_log('Booking Successfully Done!');alert('Booking Successfully Done!');
-                }else{console_log('Booking Unsuccessfully!');alert('Booking Unsuccessfully!');}}}}
+                    if(REPORT){console_log('Booking Successfully Done!');}alert('Booking Successfully Done!');
+                }else{if(REPORT){console_log('Booking Unsuccessfully!');}alert('Booking Unsuccessfully!');}}}}
     function change_password(){
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){
             $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
@@ -34,10 +34,7 @@
                         if(REPORT){console_log("Password Updated Successfully!");}
                         alert("Password Updated Successfully!");
                         redirect("user.php",TRUE);
-                    }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}
-                }else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}
-            }else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};
-        }
+                    }else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");};}
     }
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     console_log(date('Y-m-d H:i:s'));
