@@ -29,9 +29,7 @@
             $op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
             if($np==$cnp){
                 $id=$_SESSION['id'];
-                while($row=mysqli_fetch_assoc(exec_query("SELECT password FROM customer WHERE id='$id'"))){
-                    $db_pwd=$row['password'];
-                }
+                $db_pwd=get_db_user_password($id);
                 if(password_verify($op, $db_pwd)){
                     $new_pwd=password_hash($np, PASSWORD_DEFAULT);
                     if(exec_query("UPDATE customer SET password='$new_pwd' where id='$id'")===TRUE){
@@ -121,4 +119,5 @@
     // console_log(date('Y-m-d H:i:s'));
     // print_r($_SESSION);
     // session_unset();
+    echo get_db_user_password($_SESSION['id']);
 ?>
