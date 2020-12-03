@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
-    <?php include_once("config.php"); redirect('user.php', TRUE); ?>
+    <?php include_once("config.php"); redirect('user.php',TRUE);?>
 </head>
 
 <body>
@@ -39,10 +39,10 @@
                 <div class="form-group"><input class="form-control" type="tel" id="phone_no" placeholder="Phone No" required="" name="phone_no" minlength="10" maxlength="10" autofocus="" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="password" id="password" placeholder="Password" required="" name="password" minlength="8" autocomplete="on"></div>
                 <div class="form-group"><input class="form-control" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" minlength="8" autocomplete="on" required=""></div>
-                <div class="form-group"><select class="form-control" id="location" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php include_once('config.php');echo location_options(); ?></select></div>
+                <div class="form-group"><select class="form-control" id="location" placeholder="location" required="" name="location"><option value="" selected="" disabled>Location</option><?php include_once('config.php');echo location_options();?></select></div>
                 <div class="form-group"><select class="form-control" id="type" required="" name="type"><option value="" selected="">Type</option><option value="domestic">Domestic</option><option value="commercial">Commercial</option></select></div>
                 <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success text-center btn-rounded" data-bs-hover-animate="shake" type="submit" onclick="">Submit</button><button class="btn btn-warning text-center btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
-                <?php include_once('config.php'); register(); ?>
+                <?php include_once('config.php'); register();?>
             </form>
         </div>
     </div>
