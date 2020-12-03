@@ -38,7 +38,7 @@
         }
     }
     function pending_orders($id){
-        $result=exec_query("SELECT * FROM booking WHERE id='$id';");
+        $result=exec_query("SELECT * FROM booking WHERE id='$id' AND booking_status='pending';");
     }
     function delivered_orders($id){
         $result=exec_query("SELECT * FROM booking WHERE id='$id';");
