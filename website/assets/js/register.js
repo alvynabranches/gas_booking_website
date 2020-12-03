@@ -82,7 +82,7 @@ document.getElementById('username').addEventListener('focusout', (e) => {
 });
 document.getElementById('phone_no').addEventListener('keyup', (e)=>{
     if(document.getElementById('phone_no').value.length != 10){
-        document.getElementById('username').style.border = '5px solid red';
+        document.getElementById('phone_no').style.border = '5px solid red';
     }else{
         document.getElementById('username').style.border = '5px solid green';
     }
