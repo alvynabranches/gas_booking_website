@@ -41,7 +41,7 @@
         $result=exec_query("");
     }
     function delivered_orders(){
-        
+        $result=exec_query("");
     }
     // console_log(date('Y-m-d H:i:s'));
     // print_r($_SESSION);
