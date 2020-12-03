@@ -81,7 +81,7 @@ document.getElementById('username').addEventListener('focusout', (e) => {
     }
 });
 document.getElementById('phone_no').addEventListener('keyup', (e)=>{
-
+    
 });
 // document.getElementById('email').addEventListener('keyup', (e) => {
 //     let reg = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-\.])+\a([A-Za-z]{2,4})$/;
