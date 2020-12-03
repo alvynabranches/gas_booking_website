@@ -71,8 +71,7 @@ document.getElementById('username').addEventListener('keyup', (e) => {
     if(document.getElementById('username').value.length < 8) {
         document.getElementById('username').style.border = '5px solid red';
     }else{
-        document.getElementById('username').style.borderColor = 'green';
-        document.getElementById('username').style.borderWidth = '5px';
+        document.getElementById('username').style.border = '5px solid green';
     }
 });
 document.getElementById('username').addEventListener('focus', (e) => {
