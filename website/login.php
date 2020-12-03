@@ -42,5 +42,4 @@
     <script src="assets/js/script.min.js"></script>
     <?php include_once('config.php'); login();?>
 </body>
-
 </html>
