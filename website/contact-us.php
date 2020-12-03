@@ -38,7 +38,7 @@
                 <div class="form-group"><select class="form-control" name="location"><option value="" selected="">Location</option><?php include_once('config.php');echo location_options();?></select></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="Subject" name="subject"></div>
                 <div class="form-group"><textarea class="form-control" name="message" placeholder="Message"></textarea></div>
-                <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="button">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="button">Clear</button></div>
+                <div class="btn-group d-flex pt-3" role="group"><button class="btn btn-success btn-rounded" data-bs-hover-animate="shake" type="submit">Submit</button><button class="btn btn-warning btn-rounded" data-bs-hover-animate="bounce" type="reset">Clear</button></div>
             </form>
         </div>
     </div>

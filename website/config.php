@@ -29,7 +29,7 @@
     function user_contact_us(){
         if(isset($_SESSION['id'])&&isset($_POST['subject'])&&isset($_POST['message'])){
             $subject=$_POST['subject'];$message=$_POST['message'];$id=$_SESSION['id'];
-            if(){
+            if(isset($_POST)){
                 if(REPORT){console_log("Feedback Sent Successfully!");alert("Feedback Sent Successfully!");}
             }else{if(REPORT){console_log("Feedback Not Sent");alert("Feedback Not Sent");}}
         }
