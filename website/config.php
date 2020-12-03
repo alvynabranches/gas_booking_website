@@ -49,7 +49,7 @@
             $db_pwd=get_db_user_password($id);
             if(password_verify($pwd, $db_pwd)){
                 if(($new_name!=$name)&&($new_phone!=$phone)&&($new_address!=$address)){
-                    if(exec_query("UPDATE customer SET customer_name='$new_name', customer_no='$new_phone' customer_address='$new_address' WHERE customer_id='$id';")===TRUE){
+                    if(exec_query("UPDATE customer SET customer_name='$new_name', customer_no='$new_phone', customer_address='$new_address' WHERE customer_id='$id';")===TRUE){
                         $_SESSION['name']=$new_name;$_SESSION['phone_no']=$new_phone;$_SESSION['address']=$new_address;
                         if(REPORT){console_log("Successfully Updated Customer Name, Customer Phone No. and Customer Address!");}
                         alert("Successfully Updated Customer Name, Customer Phone No. and Customer Address!");
