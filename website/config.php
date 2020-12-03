@@ -120,5 +120,5 @@
     // console_log(date('Y-m-d H:i:s'));
     print_r($_SESSION);
     // session_unset();
-    echo get_db_user_password(9);
+    // echo get_db_user_password(9);
 ?>
