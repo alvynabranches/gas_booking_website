@@ -42,9 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Cell 1</td>
-                        </tr>
+                        <?php ?>
                     </tbody>
                 </table>
             </div>
