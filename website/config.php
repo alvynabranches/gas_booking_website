@@ -36,7 +36,8 @@
                 $_SESSION['customer_address']=$ca;
                 $_SESSION['customer_email']=$ce;
                 header('Location: user.php');
-                redirect('user.php',TRUE);if(REPORT){console_info($_SESSION['id']);console_info($_SESSION['name']);console_info($_SESSION['username']);}if(REPORT){console_log('Logged In Successfully!');}}else{if(REPORT){console_warn('Password Incorrect!');}alert('Password Incorrect!');}}}
+                redirect('user.php',TRUE);
+                if(REPORT){console_info($_SESSION['id']);console_info($_SESSION['name']);console_info($_SESSION['username']);}if(REPORT){console_log('Logged In Successfully!');}}else{if(REPORT){console_warn('Password Incorrect!');}alert('Password Incorrect!');}}}
     function logout(){session_start();session_unset();if(REPORT){console_info('Logged Out Successfully!');}}
     function logout_user(){if(isset($_GET['action'])){if($_GET['action'] == 'logout'){logout();}}}
     function register(){if(isset($_POST['full_name'])&&isset($_POST['full_address'])&&isset($_POST['username'])&&isset($_POST['email'])&&isset($_POST['password'])&&isset($_POST['confirm_password'])&&isset($_POST['location'])&&isset($_POST['type'])&&isset($_POST['phone_no'])){$name=$_POST['full_name'];$address=$_POST['full_address'];$user=$_POST['username'];$email=$_POST['email'];$pwd=$_POST['password'];$cnf_pwd=$_POST['confirm_password'];$location=$_POST['location'];$type=$_POST['type'];$phone=$_POST['phone_no'];$pwd=password_hash($pwd, PASSWORD_DEFAULT);if(exec_query("INSERT INTO customer(customer_name, customer_address, username, customer_email, password, customer_location_id, customer_type, customer_no) VALUES ('$name', '$address', '$user', '$email', '$pwd', '$location', '$type', '$phone')")===TRUE){if(REPORT){console_info("Record Created Successfully");}echo "<script>let baseurl=window.location.origin;let loginurl=baseurl+'/project/website/login.php';setTimeout(function(){window.location.href=loginurl;},0);</script>";}else{if(REPORT){console_warn("Record Not Created Successfully");}}}}
@@ -112,5 +113,4 @@
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     console_log(date('Y-m-d H:i:s'));
     // print_r($_SESSION);
-    session_unset();   
 ?>
