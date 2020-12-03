@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link d-xl-flex" data-bs-hover-animate="pulse" style="color:#ffffff;" href="index.html"><i class="fa fa-home"></i>&nbsp;Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.html">Contact Us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="swing" style="color: #ffffff;font-weight: bold;" href="login.html">Login</a></li>
-                    <li class="nav-item btn-primary" role="presentation"><a class="nav-link active" data-bs-hover-animate="shake" style="color: #ffffff;font-weight: bold;" href="register.html">Register</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link d-xl-flex" data-bs-hover-animate="pulse" style="color:#ffffff;" href="index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="flash" style="color: #ffffff;font-weight: bold;" href="contact-us.php">Contact Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="swing" style="color: #ffffff;font-weight: bold;" href="login.php">Login</a></li>
+                    <li class="nav-item btn-primary" role="presentation"><a class="nav-link active" data-bs-hover-animate="shake" style="color: #ffffff;font-weight: bold;" href="register.php">Register</a></li>
                 </ul>
             </div>
         </div>
