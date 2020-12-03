@@ -37,7 +37,7 @@
                 <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username" value="<?php include_once('config.php');echo $_SESSION['username'];?>" disabled="" readonly=""></div>
                 <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" value="<?php include('config.php');echo $_SESSION['name'];?>"></div>
                 <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php'); echo $_SESSION['type'];?>" name="type" placeholder="Type" disabled="" readonly=""></div>
-                <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php'); echo get_location($_SESSION['customer_location_id']);?>" placeholder="Location" name="location" disabled="" readonly=""></div>
+                <div class="form-group"><input class="form-control" type="text" value="<?php include_once('config.php');echo get_location($_SESSION['customer_location_id']);?>" placeholder="Location" name="location" disabled="" readonly=""></div>
                 <div class="form-group"><input class="form-control" type="text" name="phone_no" placeholder="Phone No" value="<?php include_once('config.php');echo $_SESSION['customer_phone_no'];?>"></div>
                 <div class="form-group"><input class="form-control" type="text" placeholder="Address" name="address" value="<?php include_once('config.php');echo $_SESSION['customer_address'];?>"></div>
                 <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
