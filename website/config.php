@@ -28,8 +28,7 @@
         if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){$op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];
             if($np==$cnp){
                 $id=$_SESSION['id'];
-                $db_pwd=get_db_user_password($id);if(password_verify($op, $db_pwd)){$new_pwd=password_hash($np, PASSWORD_DEFAULT);if(exec_query("UPDATE customer SET password='$new_pwd' WHERE customer_id='$id'")===TRUE){if(REPORT){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);}else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");}}
-    }
+                $db_pwd=get_db_user_password($id);if(password_verify($op, $db_pwd)){$new_pwd=password_hash($np, PASSWORD_DEFAULT);if(exec_query("UPDATE customer SET password='$new_pwd' WHERE customer_id='$id'")===TRUE){if(REPORT){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);}else{if(REPORT){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(REPORT){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(REPORT){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");}}}
     
     // console_log(date('Y-m-d H:i:s'));
     // print_r($_SESSION);
