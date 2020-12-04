@@ -7,7 +7,7 @@
     function console_error($m){echo "<script>console.error('$m')</script>";}
     function console_info($m){echo "<script>console.info('$m')</script>";}
     function alert($m){echo "<script>alert('$m');</script>";}
-    function redirect(string $redirect_page, bool $is_log_in=FALSE, string $user_type='customer', $other_user_page=''){
+    function redirect(string $redirect_page, string $redirect_other_user_page, bool $is_log_in=FALSE, string $user_type='customer'){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if($_SESSION==null){
             if(!$is_log_in){
@@ -18,7 +18,7 @@
                 if($user_type=='customer'){
                     header("Location: $redirect_page");
                 }else{
-                    header("Location: $other_user_page");
+                    header("Location: $redirect_other_user_page");
                 }
             }
         }
