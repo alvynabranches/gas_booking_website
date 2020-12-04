@@ -20,7 +20,6 @@
                 }else{
                     header("Location: $other_user_page");
                 }
-                header("Location: $redirect_page");
             }
         }
     }
