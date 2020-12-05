@@ -7,11 +7,11 @@
     function console_error($m){echo "<script>console.error('$m')</script>";}
     function console_info($m){echo "<script>console.info('$m')</script>";}
     function alert($m){echo "<script>alert('$m');</script>";}
-    function redirect(string $redirect_customer_page, string $redirect_agency_page, bool $is_log_in=FALSE){
+    function redirect(string $redirect_customer_page, string $redirect_agency_page, bool $is_log_in=FALSE, string $index_page='index.php'){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if($_SESSION==null){
             if(!$is_log_in){
-                header("Location: $redirect_customer_page");
+                header("Location: $index_page");
             }
         }else{
             if($is_log_in){
@@ -21,7 +21,7 @@
                     header("Location: $redirect_agency_page");
                 }else{
                     session_unset();
-                    header("Location: $redirect_customer_page");
+                    header("Location: $index_page");
                 }
             }
         }
@@ -42,6 +42,6 @@
     function pending_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$c_id' AND booking_status='pending' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     function delivered_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$c_id' AND booking_status='delivered' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     // Untested Code
-    redirect('index.php','index.php',FALSE);
-    redirect('user.php','agency.php',TRUE);
+    redirect('user.php','agency.php',FALSE, 'index.php');
+    redirect('user.php','agency.php',TRUE, 'index.php');
 ?>
