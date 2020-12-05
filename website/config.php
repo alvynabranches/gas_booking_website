@@ -15,7 +15,7 @@
             }
         }else{
             if($is_log_in){
-                if($user_type=='customer'){
+                if($_SESSION['type']=='customer'){
                     header("Location: $redirect_customer_page");
                 }else{
                     header("Location: $redirect_agency_page");
@@ -41,4 +41,5 @@
     // Untested Code
     // redirect('index.php','index.php',FALSE);
     // redirect('user.php', 'agency.php',TRUE,'customer');
+    print_r($_SESSION);
 ?>
