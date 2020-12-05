@@ -22,7 +22,6 @@
                 session_unset();
                 header("Location: $index_page");
             }
-            
         }
     }
     function exec_query($sql,$host='localhost',$username='root',$password='',$db='gas_booking_system'){$con=new mysqli($host,$username,$password,$db);$result=mysqli_query($con,$sql);$con->close();return $result;}
