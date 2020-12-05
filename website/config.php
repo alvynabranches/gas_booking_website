@@ -1,6 +1,5 @@
 <?php
     define('DEBUG',TRUE);error_reporting(0);session_start();date_default_timezone_set('Asia/Kolkata');
-    if(DEBUG){define('REPORT',TRUE);}else{define('REPORT',FALSE);}
     define('DB_SERVER', 'localhost');define('DB_USERNAME', 'root');define('PASSWORD', '');define('DB', 'gas_booking_system');$con=new mysqli(DB_SERVER,DB_USERNAME,PASSWORD,DB);
     function console_log($m){echo "<script>console.log('$m')</script>";}
     function console_warn($m){echo "<script>console.warn('$m')</script>";}
