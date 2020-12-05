@@ -10,7 +10,7 @@
     function redirect(string $redirect_customer_page, string $redirect_agency_page, bool $is_log_in=FALSE, string $index_page='index.php'){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if($_SESSION==null){
-            if(!$is_log_in){
+            
                 header("Location: $index_page");
             }
         }else{
