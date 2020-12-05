@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <?php include_once("config.php");redirect('user-contact-us.php',TRUE);?>
-    <?php include_once("config.php");redirect('user.php','agency.php',FALSE,'index.php');?>
+    <?php include_once("config.php");redirect('user-contact-us.php','agency-contact-us.php',FALSE,'contact-us.php');?>
 </head>
 
 <body>
