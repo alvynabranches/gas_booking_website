@@ -7,7 +7,7 @@
     function console_error($m){echo "<script>console.error('$m')</script>";}
     function console_info($m){echo "<script>console.info('$m')</script>";}
     function alert($m){echo "<script>alert('$m');</script>";}
-    function redirect(string $redirect_customer_page, string $redirect_agency_page, bool $is_log_in=FALSE, string $index_page='index.php'){
+    function redirect(string $redirect_customer_page, string $redirect_agency_page, string $index_page='index.php'){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if($_SESSION==null){
             header("Location: $index_page");
