@@ -20,7 +20,8 @@
                 }else if($_SESSION['user_type']=='agency'){
                     header("Location: $redirect_agency_page");
                 }else{
-                    
+                    session_unset();
+                    header("Location: $redirect_customer_page");
                 }
             }
         }
