@@ -14,16 +14,16 @@
                 header("Location: $index_page");
             }
         }else{
-            if($is_log_in){
-                if($_SESSION['user_type']=='customer'){
-                    header("Location: $redirect_customer_page");
-                }else if($_SESSION['user_type']=='agency'){
-                    header("Location: $redirect_agency_page");
-                }else{
-                    session_unset();
-                    header("Location: $index_page");
-                }
+            
+            if($_SESSION['user_type']=='customer'){
+                header("Location: $redirect_customer_page");
+            }else if($_SESSION['user_type']=='agency'){
+                header("Location: $redirect_agency_page");
+            }else{
+                session_unset();
+                header("Location: $index_page");
             }
+            
         }
     }
     function exec_query($sql,$host='localhost',$username='root',$password='',$db='gas_booking_system'){$con=new mysqli($host,$username,$password,$db);$result=mysqli_query($con,$sql);$con->close();return $result;}
