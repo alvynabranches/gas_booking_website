@@ -40,5 +40,5 @@
     
     // Untested Code
     redirect('user.php','agency-home.php',FALSE,'index.php');
-    redirect('user.php','agency.php',TRUE,'index.php');
+    redirect('user.php','agency-home.php',TRUE,'index.php');
 ?>
