@@ -43,6 +43,6 @@
     function delivered_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$c_id' AND booking_status='delivered' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     
     // Untested Code
-    redirect('user.php','agency.php',FALSE, 'index.php');
+    redirect('user.php','agency.php',FALSE,'index.php');
     redirect('user.php','agency.php',TRUE, 'index.php');
 ?>
