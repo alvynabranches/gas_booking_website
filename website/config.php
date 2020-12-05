@@ -12,7 +12,6 @@
         if($_SESSION==null){
             
                 header("Location: $index_page");
-            
         }else{
             if($_SESSION['user_type']=='customer'){
                 header("Location: $redirect_customer_page");
