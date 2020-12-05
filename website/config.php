@@ -7,18 +7,18 @@
     function console_error($m){echo "<script>console.error('$m')</script>";}
     function console_info($m){echo "<script>console.info('$m')</script>";}
     function alert($m){echo "<script>alert('$m');</script>";}
-    function redirect(string $redirect_page, string $redirect_other_user_page, bool $is_log_in=FALSE, string $user_type='customer'){
+    function redirect(string $redirect_customer_page, string $redirect_agency_page, bool $is_log_in=FALSE){
         if(!isset($_COOKIE['PHPSESSID'])){session_start();}
         if($_SESSION==null){
             if(!$is_log_in){
-                header("Location: $redirect_page");
+                header("Location: $redirect_customer_page");
             }
         }else{
             if($is_log_in){
                 if($user_type=='customer'){
-                    header("Location: $redirect_page");
+                    header("Location: $redirect_customer_page");
                 }else{
-                    header("Location: $redirect_other_user_page");
+                    header("Location: $redirect_agency_page");
                 }
             }
         }
@@ -40,5 +40,5 @@
     function delivered_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$c_id' AND booking_status='delivered' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     // Untested Code
     redirect('index.php','index.php',FALSE);
-    redirect('user.php',TRUE);
+    redirect('user.php', 'agency.php',TRUE, 'customer');
 ?>
