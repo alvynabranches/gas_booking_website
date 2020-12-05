@@ -15,10 +15,12 @@
             }
         }else{
             if($is_log_in){
-                if($_SESSION['type']=='customer'){
+                if($_SESSION['user_type']=='customer'){
                     header("Location: $redirect_customer_page");
-                }else{
+                }else if($_SESSION['user_type']=='agency'){
                     header("Location: $redirect_agency_page");
+                }else{
+                    
                 }
             }
         }
