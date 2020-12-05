@@ -41,5 +41,4 @@
     // Untested Code
     // redirect('index.php','index.php',FALSE);
     // redirect('user.php', 'agency.php',TRUE,'customer');
-    print_r($_SESSION);
 ?>
