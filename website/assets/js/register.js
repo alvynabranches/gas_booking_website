@@ -106,6 +106,6 @@ document.getElementById('phone_no').addEventListener('focusout',(e)=>{
 //     if(reg.test(document.getElementById('email'))){
 //         document.getElementById('email').style.border='5px solid green';
 //     }else{
-//         document.getElementById('email').style.border = '5px solid red';
+//         document.getElementById('email').style.border ='5px solid red';
 //     }
 // });
