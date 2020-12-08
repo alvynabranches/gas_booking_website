@@ -24,10 +24,5 @@
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     
     // Untested Code
-    function show_profile(){
-
-    }
-    function agency_profile(){
-
-    }
+    
 ?>
