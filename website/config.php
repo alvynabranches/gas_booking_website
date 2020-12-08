@@ -94,10 +94,11 @@
     function pending_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$c_id' AND booking_status='pending' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     function delivered_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd FROM booking WHERE booking_customer_id='$c_id' AND booking_status='delivered' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
+    
+    // Untested Code
     function show_profile(){
 
     }
-    // Untested Code
     function agency_profile(){
 
     }
