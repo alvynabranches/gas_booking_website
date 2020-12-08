@@ -67,7 +67,7 @@ document.getElementById('username').addEventListener('keyup',(e)=>{
     }
 });
 document.getElementById('username').addEventListener('focus',(e) => {
-    if(document.getElementById('username').value.length < 8) {
+    if(document.getElementById('username').value.length< 8) {
         document.getElementById('username').style.border='5px solid red';
     }else{
         document.getElementById('username').style.border='5px solid green';
