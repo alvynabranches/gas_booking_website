@@ -61,7 +61,7 @@ document.getElementById('full_address').addEventListener('focusout',(e)=>{
 });
 document.getElementById('username').addEventListener('keyup',(e)=>{
     if(document.getElementById('username').value.length<8) {
-        document.getElementById('username').style.border= '5px solid red';
+        document.getElementById('username').style.border='5px solid red';
     }else{
         document.getElementById('username').style.border = '5px solid green';
     }
