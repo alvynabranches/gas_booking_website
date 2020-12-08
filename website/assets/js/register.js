@@ -98,7 +98,7 @@ document.getElementById('phone_no').addEventListener('focusout',(e)=>{
     if(document.getElementById('phone_no').value.length!=10){
         document.getElementById('phone_no').style.border='5px solid red';
     }else{
-        document.getElementById('phone_no').style.border ='5px solid green';
+        document.getElementById('phone_no').style.border='5px solid green';
     }
 });
 // document.getElementById('email').addEventListener('keyup', (e) => {
