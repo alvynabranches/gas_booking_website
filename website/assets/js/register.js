@@ -24,7 +24,7 @@ document.getElementById('full_name').addEventListener('keydown',(e)=>{
         document.getElementById('full_name').style.border='5px solid red';
     }
 });
-document.getElementById('full_name').addEventListener('focus',(e) => {
+document.getElementById('full_name').addEventListener('focus',(e)=>{
     if(document.getElementById('full_name').value.length>=5){
         document.getElementById('full_name').style.border='5px solid green';
     }else{
