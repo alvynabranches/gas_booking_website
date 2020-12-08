@@ -88,7 +88,7 @@ document.getElementById('phone_no').addEventListener('keyup',(e)=>{
     }
 });
 document.getElementById('phone_no').addEventListener('focus',(e)=>{
-    if(document.getElementById('phone_no').value.length!= 10){
+    if(document.getElementById('phone_no').value.length!=10){
         document.getElementById('phone_no').style.border = '5px solid red';
     }else{
         document.getElementById('phone_no').style.border = '5px solid green';
