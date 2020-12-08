@@ -80,7 +80,7 @@ document.getElementById('username').addEventListener('focusout',(e)=>{
         document.getElementById('username').style.border='5px solid green';
     }
 });
-document.getElementById('phone_no').addEventListener('keyup', (e)=>{
+document.getElementById('phone_no').addEventListener('keyup',(e)=>{
     if(document.getElementById('phone_no').value.length != 10){
         document.getElementById('phone_no').style.border = '5px solid red';
     }else{
