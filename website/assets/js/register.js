@@ -1,38 +1,38 @@
-document.getElementById('confirm_password').addEventListener('focusout', (e) => {
-    if(document.getElementById('password').value != document.getElementById('confirm_password').value){
+document.getElementById('confirm_password').addEventListener('focusout',(e)=>{
+    if(document.getElementById('password').value!=document.getElementById('confirm_password').value){
         alert('Confirm password does not match the password');
     }
 });
-document.getElementById('confirm_password').addEventListener('keyup', (e) => {
-    if(document.getElementById('password').value != document.getElementById('confirm_password').value || document.getElementById('password').value.length < 8) {
-        document.getElementById('confirm_password').style.border = '5px solid red';
+document.getElementById('confirm_password').addEventListener('keyup',(e)=>{
+    if(document.getElementById('password').value!=document.getElementById('confirm_password').value||document.getElementById('password').value.length<8){
+        document.getElementById('confirm_password').style.border='5px solid red';
     }else{
-        document.getElementById('confirm_password').style.border = '5px solid green';
+        document.getElementById('confirm_password').style.border='5px solid green';
     }
 });
-document.getElementById('password').addEventListener('keyup', (e) => {
-    if(document.getElementById('password').value.length < 8) {
-        document.getElementById('password').style.border = '5px solid red';
+document.getElementById('password').addEventListener('keyup',(e)=>{
+    if(document.getElementById('password').value.length<8){
+        document.getElementById('password').style.border='5px solid red';
     }else{
-        document.getElementById('password').style.border = '5px solid green';
+        document.getElementById('password').style.border='5px solid green';
     }
 });
-document.getElementById('full_name').addEventListener('keydown', (e) => {
-    if(document.getElementById('full_name').value.length >= 5){
-        document.getElementById('full_name').style.border = '5px solid green';
+document.getElementById('full_name').addEventListener('keydown',(e)=>{
+    if(document.getElementById('full_name').value.length>=5){
+        document.getElementById('full_name').style.border='5px solid green';
     }else{
-        document.getElementById('full_name').style.border = '5px solid red';
+        document.getElementById('full_name').style.border='5px solid red';
     }
 });
-document.getElementById('full_name').addEventListener('focus', (e) => {
-    if(document.getElementById('full_name').value.length >= 5){
-        document.getElementById('full_name').style.border = '5px solid green';
+document.getElementById('full_name').addEventListener('focus',(e) => {
+    if(document.getElementById('full_name').value.length>=5){
+        document.getElementById('full_name').style.border='5px solid green';
     }else{
-        document.getElementById('full_name').style.border = '5px solid red';
+        document.getElementById('full_name').style.border='5px solid red';
     }
 });
 document.getElementById('full_name').addEventListener('focusout', (e) => {
-    if(document.getElementById('full_name').value.length >= 5){
+    if(document.getElementById('full_name').value.length>=5){
         document.getElementById('full_name').style.border = '5px solid green';
     }else{
         document.getElementById('full_name').style.border = '5px solid red';
