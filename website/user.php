@@ -24,7 +24,7 @@
                         <div class="dropdown-menu" role="menu"><a class="dropdown-item active" role="presentation" href="user.php">Profile</a><a class="dropdown-item" role="presentation" href="user-booking.php">Booking</a><a class="dropdown-item" role="presentation" href="user-order-status.php">Order Status</a><a class="dropdown-item" role="presentation" href="user-change-password.php">Change Password</a><a class="dropdown-item" role="presentation" href="user-settings.php">Settings</a><a class="dropdown-item" role="presentation" href="user.php?action=logout">Logout<?php include_once("config.php");logout();redirect('','agency-home.php','index.php');?></a></div>
                     </li>
                 </ul>
-        </div>
+            </div>
         </div>
     </nav>
     <div class="scroller">
