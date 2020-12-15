@@ -32,7 +32,7 @@
     </div>
     <div class="scroller">
         <div class="container">
-            <img src="asserts/" alt="">
+            <img src="assets/img/11.jpg" alt="Burner Image">
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
