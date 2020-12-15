@@ -31,10 +31,10 @@
         </nav>
     </div>
     <div class="scroller">
-        <div class="container">
+        <div class="container img-container">
             <img src="assets/img/11.jpg" alt="Burner Image">
         </div>
-        <div class="container">
+        <div class="container img-container">
             <img src="assets/img/12.jpg" alt="Gas Image">
         </div>
     </div>
