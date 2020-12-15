@@ -30,16 +30,18 @@
             </div>
         </nav>
     </div>
-    <!-- <style>
-        .img-container{
-            height: 40vh;
-            width: 40vh;
-            padding-top: 15vh;
+    <style>
+        .img{
+            margin-top: 10vh;
         }
-    </style> -->
+        @media (min-width: 1024px){
+            .img{
+                padding: 7px;
+            }
+        }
+    </style>
     <div class="scroller">
-        <img class="img-responsive img-fluid rounded" src="assets/img/11.jpg" alt="Burner Image" height="500px" width="500px">
-        <img class="img-responsive img-fluid rounded" src="assets/img/12.jpg" alt="Gas Image" height="500px" width="500px">
+        <img class="img-fluid " src="assets/img/11.jpg" alt="Burner Image">
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
