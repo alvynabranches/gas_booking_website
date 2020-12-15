@@ -13,20 +13,17 @@
 <body class="scroller">
     <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button" style="height:80px;background-color:transparent;color:#ffffff;">
         <div class="container-fluid"><a class="navbar-brand" href="">&nbsp;Goa University Gas Agency</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff; font-weight:bold;" href=""><i class="fa fa-home"></i>&nbsp;Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;font-weight:bold;" href=""><i class="fa fa-home"></i>&nbsp;Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;font-weight:bold;" href="">&nbsp;Contact Us</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;font-weight:bold;" href="">&nbsp;Log in</a></li>
                     <li class="nav-item btn-primary" role="presentation"><a class="nav-link active" style="color:#ffffff;font-weight:bold;" href="">Register</a></li>
                 </ul>
-        </div>
+            </div>
         </div>
     </nav><img class="img-fluid mx-auto d-block img-thumbnail" src="assets/img/11.jpg" alt="Burner Image" loading="auto" width="1000" style="filter: blur(0px) brightness(75%) contrast(100%) grayscale(10%) hue-rotate(60deg) invert(10%) saturate(200%) sepia(0%);">
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
