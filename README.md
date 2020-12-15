@@ -39,7 +39,7 @@ CREATE TABLE user_feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_
 
 <br>
 
-#### <b>PostgreSQL</b>
+<!-- #### <b>PostgreSQL</b>
 
 CREATE TABLE gas(gas_id SERIAL PRIMARY KEY, gas_name VARCHAR(64), gas_type VARCHAR(32));
 
@@ -51,7 +51,7 @@ CREATE TABLE booking(booking_id SERIAL PRIMARY KEY, booking_date date, booking_a
 
 CREATE TABLE payment(payment_id SERIAL PRIMARY KEY, payment_date date, payment_booking_id INT REFERENCES booking(booking_id), delivery_address VARCHAR(256));
 
-INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa");
+INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa"); -->
 
 ## <b>Hosted Enviroments</b>
 
