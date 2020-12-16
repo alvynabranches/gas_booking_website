@@ -28,7 +28,7 @@
         if($result->num_rows>0){
             while($row=mysqli_fetch_assoc($result)){
                 if($row['bt']=='prepaid'){$bt='Prepaid'}else{$bt='Cash On Delivery'}
-                $records.="<tr><td>".$row['bd']."</td><td>".$row['ba']."</td><td>".$bt."</td></tr>";
+                $records.="<tr><td>".$row['bd']."</td><td>".$row['ba']."</td><td>$bt</td></tr>";
             }
         }else{$records="No Records Found";}return $records;}
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
