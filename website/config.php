@@ -23,9 +23,14 @@
     function change_password(){if(isset($_POST['old_password'])&&isset($_POST['new_password'])&&isset($_POST['confirm_new_password'])){$op=$_POST['old_password'];$np=$_POST['new_password'];$cnp=$_POST['confirm_new_password'];if($np==$cnp){$id=$_SESSION['id'];$db_pwd=get_db_user_password($id);if(password_verify($op, $db_pwd)){$new_pwd=password_hash($np, PASSWORD_DEFAULT);if(exec_query("UPDATE customer SET password='$new_pwd' WHERE customer_id='$id'")===TRUE){if(DEBUG){console_log("Password Updated Successfully!");}alert("Password Updated Successfully!");redirect("user.php",TRUE);}else{if(DEBUG){console_log("Password Not Updated!");}alert("Password Not Updated!");}}else{if(DEBUG){console_log("Old Password Does Not Match!");}alert("Old Password Does Not Match!");}}else{if(DEBUG){console_log("Confirm Password Does not Match!");}alert("Confirm Password Does Not Match!");}}}
     function pending_orders($c_id){$records="";$result=exec_query("SELECT booking_date AS bd, booking_amount AS ba, booking_type as bt FROM booking WHERE booking_customer_id='$c_id' AND booking_status='pending' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){$records.="<tr><td>".$row['bd']."</td><td>".$row['ba']."</td><td>".$row['bt']."</td></tr>";}}else{$records="No Records Found";}return $records;}
     function delivered_orders($c_id){
-        $records="";$result=exec_query("SELECT booking_date AS bd, booking_amount AS ba, booking_type as bt FROM booking WHERE booking_customer_id='$c_id' AND booking_status='delivered' ORDER BY booking_date DESC;");if($result->num_rows>0){while($row=mysqli_fetch_assoc($result)){
-        if($row['bt']=='prepaid'){$bt='Prepaid'}else{$bt='Cash On Delivery'}
-            $records.="<tr><td>".$row['bd']."</td><td>".$row['ba']."</td><td>".if($row['bt']=='cod'){'Cash On Delivery'}else{'Prepaid'}."</td></tr>";}}else{$records="No Records Found";}return $records;}
+        $records="";
+        $result=exec_query("SELECT booking_date AS bd, booking_amount AS ba, booking_type as bt FROM booking WHERE booking_customer_id='$c_id' AND booking_status='delivered' ORDER BY booking_date DESC;");
+        if($result->num_rows>0){
+            while($row=mysqli_fetch_assoc($result)){
+                if($row['bt']=='prepaid'){$bt='Prepaid'}else{$bt='Cash On Delivery'}
+                $records.="<tr><td>".$row['bd']."</td><td>".$row['ba']."</td><td>".$bt."</td></tr>";
+            }
+        }else{$records="No Records Found";}return $records;}
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     
     // Untested Code
