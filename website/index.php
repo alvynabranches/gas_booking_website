@@ -31,6 +31,7 @@
         </div>
     </nav>
     <!-- <img class="img-fluid mx-auto d-block img-thumbnail p-10" src="assets/img/12.jpg" alt="Burner Image" loading="auto" width="950" style="filter: blur(0px) brightness(75%) contrast(100%) grayscale(10%) hue-rotate(60deg) invert(10%) saturate(200%) sepia(0%);padding:10px;@media (max-height:700px){padding-top:20px;}"> -->
+    <!-- <img class="img-fluid mx-auto d-block img-thumbnail p-10" src="12.jpg" width="1000" style="filter: brightness(86%) contrast(101%) grayscale(10%) hue-rotate(150deg) invert(5%) saturate(200%) sepia(20%);" /> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
 </body>
