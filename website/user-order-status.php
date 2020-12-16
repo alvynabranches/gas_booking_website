@@ -38,6 +38,7 @@
                     <thead>
                         <tr>
                             <th>Booking Date</th>
+                            <th>Booking Amount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,7 @@
                     <thead>
                         <tr>
                             <th>Booking Date</th>
+                            <th>Booking Amount</th>
                         </tr>
                     </thead>
                     <tbody>
