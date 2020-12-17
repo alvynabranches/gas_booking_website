@@ -27,7 +27,7 @@
     
     // Untested Code
     function delivered($b_id){
-        $sql="UPDATE booking SET ";
+        $sql="UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id";
     }
 
     function undelivered($b_id){
