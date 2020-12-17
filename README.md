@@ -22,13 +22,11 @@ CREATE TABLE location(location_id INT PRIMARY KEY AUTO_INCREMENT, location_name 
 
 CREATE TABLE customer(customer_id INT PRIMARY KEY AUTO_INCREMENT, customer_name VARCHAR(128), customer_no BIGINT, customer_email VARCHAR(128), customer_address VARCHAR(1024), username VARCHAR(128) NOT NULL UNIQUE, password VARCHAR(1024), customer_type ENUM('domestic', 'commercial'), customer_location_id INT NOT NULL, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
 
-CREATE TABLE booking(booking_id INT PRIMARY KEY AUTO_INCREMENT, booking_date date, booking_amount float, booking_customer_id INT, booking_status enum('pending', 'delivered'), booking_type ENUM("cod", "prepaid"), FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
-ALTER TABLE booking MODIFY booking_customer_id INT NOT NULL;
-ALTER TABLE booking MODIFY booking_date DATETIME NOT NULL;
+CREATE TABLE booking(booking_id INT PRIMARY KEY AUTO_INCREMENT, booking_date DATETIME NOT NULL, booking_amount float, booking_customer_id INT NOT NULL, booking_status enum('pending', 'delivered'), booking_type ENUM("cod", "prepaid"), FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
 
 CREATE TABLE payment(payment_id INT PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id INT, delivery_address VARCHAR(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
 
-CREATE TABLE feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name VARCHAR(128), phone_no VARCHAR(16), email VARCHAR(128), feedback_location_id INT NOT NULL, feedback_subject VARCHAR(128), feedback_message VARCHAR(4096), FOREIGN KEY (feedback_location_id) REFERENCES location(location_id));
+CREATE TABLE feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_date DATETIME, name VARCHAR(128), phone_no BIG INT NOT NULL, email VARCHAR(128) NOT NULL, feedback_location_id INT NOT NULL, feedback_subject VARCHAR(128), feedback_message VARCHAR(4096), FOREIGN KEY (feedback_location_id) REFERENCES location(location_id));
 CREATE TABLE user_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_customer_id INT NOT NULL, feedback_subject VARCHAR(128), feedback_message VARCHAR(4096), FOREIGN KEY (feedback_customer_id) REFERENCES customer(customer_id));
 
 INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa"), ("Ponda"), ("Valpoi"), ("Vasco");
@@ -42,6 +40,8 @@ CREATE TABLE agency_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedbac
 
 ALTER TABLE user_feedback ADD COLUMN feedback_date datetime NOT NULL;
 ALTER TABLE booking MODIFY customer_location_id INT NOT NULL;
+ALTER TABLE feedback MODIFY phone_no BIGINT NOT NULL;
+ALTER TABLE feedback MODIFY email VARCHAR(128) NOT NULL
 
 <br>
 
