@@ -49,5 +49,3 @@ ALTER TABLE user_feedback ADD COLUMN feedback_date datetime NOT NULL;
 
 1. [Heroku](https://_.herokuapp.com)
 <!-- 2. [Hostinger](https://_.com) -->
-
-<br>
