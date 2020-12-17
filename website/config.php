@@ -27,10 +27,10 @@
     
     // Untested Code
     function delivered($b_id){
-
+        $sql="UPDATE booking SET ";
     }
 
     function undelivered($b_id){
-        
+
     }
 ?>
