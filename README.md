@@ -29,13 +29,15 @@ ALTER TABLE booking MODIFY booking_date DATETIME NOT NULL;
 
 CREATE TABLE payment(payment_id int PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id int, delivery_address varchar(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
 
+CREATE TABLE feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name varchar(128), phone_no varchar(16), email varchar(128), feedback_location_id int NOT NULL, feedback_subject varchar(128), feedback_message varchar(4096), FOREIGN KEY (feedback_location_id) REFERENCES location(location_id));
+CREATE TABLE user_feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_customer_id int NOT NULL, feedback_subject varchar(128), feedback_message varchar(4096), FOREIGN KEY (feedback_customer_id) REFERENCES customer(customer_id));
+
 INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa");
 INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("Margao"), ("Pernem"), ("Bicholim"), ("Canacona");
 
 ###### SCHEMA CHANGES
 
-CREATE TABLE feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name varchar(128), phone_no varchar(16), email varchar(128), feedback_location_id int NOT NULL, feedback_subject varchar(128), feedback_message varchar(4096), FOREIGN KEY (feedback_location_id) REFERENCES location(location_id));
-CREATE TABLE user_feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_customer_id int NOT NULL, feedback_subject varchar(128), feedback_message varchar(4096), FOREIGN KEY (feedback_customer_id) REFERENCES customer(customer_id));
+CREATE TABLE agency(agency_id int PRIMARY KEY AUTO_INCREMENT, agency_name varchar(256), agency_address varchar(1024), agency_location_id int, agency_contact_person varchar(256), agency_phone_no varchar(16), agency_email_id varchar(128), agency_username varchar(256), agency_password varchar(4096), FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
 
 <br>
 
