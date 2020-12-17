@@ -31,6 +31,6 @@
     }
 
     function undelivered($b_id){
-        $sql="UPDATE booking SET  WHERE booking_id=$b_id";
+        $sql="UPDATE booking SET booking_status='pending' WHERE booking_id=$b_id";
     }
 ?>
