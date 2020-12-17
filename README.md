@@ -41,7 +41,7 @@ CREATE TABLE agency_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedbac
 ALTER TABLE user_feedback ADD COLUMN feedback_date datetime NOT NULL;
 ALTER TABLE booking MODIFY customer_location_id INT NOT NULL;
 ALTER TABLE feedback MODIFY phone_no BIGINT NOT NULL;
-ALTER TABLE feedback MODIFY email VARCHAR(128) NOT NULL
+ALTER TABLE feedback MODIFY email VARCHAR(128) NOT NULL;
 
 <br>
 
