@@ -29,10 +29,9 @@
     // Untested Code
     // Agency Functionality
     function delivered($b_id){
-        if(){
+        if(exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id")){
             
         }
-        exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id");
     }
 
     function undelivered($b_id){
