@@ -32,7 +32,7 @@
         if(exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id")===TRUE){
             
         }else{
-
+            console_info("");
         }
     }
 
@@ -40,7 +40,7 @@
         if(exec_query("UPDATE booking SET booking_status='pending' WHERE booking_id=$b_id")){
 
         }else{
-            
+
         }
     }
 ?>
