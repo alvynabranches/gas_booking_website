@@ -30,7 +30,7 @@
     // Agency Functionality
     function delivered($b_id){
         if(exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id")===TRUE){
-            console_info("Deliveried Successfully");
+            console_info("Delivered Successfully");
         }else{
             console_info("");
         }
