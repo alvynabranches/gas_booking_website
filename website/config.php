@@ -32,7 +32,7 @@
     }
 
     function undelivered($b_id){
-        exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id")
+        exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id");
         $sql="UPDATE booking SET booking_status='pending' WHERE booking_id=$b_id";
     }
 ?>
