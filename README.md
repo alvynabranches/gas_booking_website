@@ -37,27 +37,13 @@ INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("M
 
 ###### SCHEMA CHANGES
 
-CREATE TABLE agency(agency_id INT PRIMARY KEY AUTO_INCREMENT, agency_name VARCHAR(256), agency_address VARCHAR(1024), agency_location_id INT NOT NULL, agency_contact_person VARCHAR(256), agency_phone_no VARCHAR(16), agency_email_id VARCHAR(128), agency_username VARCHAR(256) UNIQUE NOT NULL, agency_password VARCHAR(4096) UNIQUE NOT NULL, agency_confirm VARCHAR(16), FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
+CREATE TABLE agency(agency_id INT PRIMARY KEY AUTO_INCREMENT, agency_name VARCHAR(256) NOT NULL, agency_address VARCHAR(1024), agency_location_id INT NOT NULL, agency_contact_person VARCHAR(256) NOT NULL, agency_phone_no VARCHAR(16) NOT NULL, agency_email_id VARCHAR(128) NOT NULL, agency_username VARCHAR(256) UNIQUE NOT NULL, agency_password VARCHAR(4096) UNIQUE NOT NULL, agency_confirm VARCHAR(16), FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
 
-CREATE TABLE agency_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name VARCHAR(128), phone_no VARCHAR(16), email VARCHAR(128), );
+CREATE TABLE agency_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_agency_id INT NOT NULL, feedback_date datetime, name VARCHAR(128), phone_no VARCHAR(16), email VARCHAR(128), FOREIGN KEY (feedback_agency_id));
 
-ALTER TABLE user_feedback ADD COLUMN feedback_date datetime;
+ALTER TABLE user_feedback ADD COLUMN feedback_date datetime NOT NULL;
 
 <br>
-
-<!-- #### <b>PostgreSQL</b>
-
-CREATE TABLE gas(gas_id SERIAL PRIMARY KEY, gas_name VARCHAR(64), gas_type VARCHAR(32));
-
-CREATE TABLE location(location_id SERIAL PRIMARY KEY, location_name VARCHAR(128));
-
-CREATE TABLE customer(customer_id SERIAL PRIMARY KEY, customer_no INT, customer_email VARCHAR(128), username VARCHAR(64), password VARCHAR(64), customer_location_id INT REFERENCES location(location_id));
-
-CREATE TABLE booking(booking_id SERIAL PRIMARY KEY, booking_date date, booking_amount REAL, booking_customer_id INT REFERENCES customer(customer_id));
-
-CREATE TABLE payment(payment_id SERIAL PRIMARY KEY, payment_date date, payment_booking_id INT REFERENCES booking(booking_id), delivery_address VARCHAR(256));
-
-INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa"); -->
 
 ## <b>Hosted Enviroments</b>
 
