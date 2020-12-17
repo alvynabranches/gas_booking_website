@@ -16,28 +16,32 @@
 
 #### <b>MySQL</b>
 
-CREATE TABLE gas(gas_id int PRIMARY KEY AUTO_INCREMENT, gas_name varchar(64), gas_type varchar(32));
+CREATE TABLE gas(gas_id INT PRIMARY KEY AUTO_INCREMENT, gas_name VARCHAR(64), gas_type VARCHAR(32));
 
-CREATE TABLE location(location_id int PRIMARY KEY AUTO_INCREMENT, location_name varchar(128) NOT NULL UNIQUE);
+CREATE TABLE location(location_id INT PRIMARY KEY AUTO_INCREMENT, location_name VARCHAR(128) NOT NULL UNIQUE);
 
-CREATE TABLE customer(customer_id int PRIMARY KEY AUTO_INCREMENT, customer_name varchar(128), customer_no bigint, customer_email varchar(128), customer_address varchar(1024), username varchar(128) NOT NULL UNIQUE, password varchar(1024), customer_type ENUM('domestic', 'commercial'), customer_location_id int, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
+CREATE TABLE customer(customer_id INT PRIMARY KEY AUTO_INCREMENT, customer_name VARCHAR(128), customer_no bigint, customer_email VARCHAR(128), customer_address VARCHAR(1024), username VARCHAR(128) NOT NULL UNIQUE, password VARCHAR(1024), customer_type ENUM('domestic', 'commercial'), customer_location_id INT, FOREIGN KEY (customer_location_id) REFERENCES location(location_id));
 
-CREATE TABLE booking(booking_id int PRIMARY KEY AUTO_INCREMENT, booking_date date, booking_amount float, booking_customer_id int, booking_status enum('pending', 'delivered'), FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
+CREATE TABLE booking(booking_id INT PRIMARY KEY AUTO_INCREMENT, booking_date date, booking_amount float, booking_customer_id INT, booking_status enum('pending', 'delivered'), FOREIGN KEY (booking_customer_id) REFERENCES customer(customer_id));
 ALTER TABLE booking ADD COLUMN booking_type ENUM("cod", "prepaid");
-ALTER TABLE booking MODIFY booking_customer_id int NOT NULL;
+ALTER TABLE booking MODIFY booking_customer_id INT NOT NULL;
 ALTER TABLE booking MODIFY booking_date DATETIME NOT NULL;
 
-CREATE TABLE payment(payment_id int PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id int, delivery_address varchar(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
+CREATE TABLE payment(payment_id INT PRIMARY KEY AUTO_INCREMENT, payment_date date, payment_booking_id INT, delivery_address VARCHAR(256), FOREIGN KEY (payment_booking_id) REFERENCES booking(booking_id));
 
-CREATE TABLE feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name varchar(128), phone_no varchar(16), email varchar(128), feedback_location_id int NOT NULL, feedback_subject varchar(128), feedback_message varchar(4096), FOREIGN KEY (feedback_location_id) REFERENCES location(location_id));
-CREATE TABLE user_feedback(feedback_id int PRIMARY KEY AUTO_INCREMENT, feedback_customer_id int NOT NULL, feedback_subject varchar(128), feedback_message varchar(4096), FOREIGN KEY (feedback_customer_id) REFERENCES customer(customer_id));
+CREATE TABLE feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name VARCHAR(128), phone_no VARCHAR(16), email VARCHAR(128), feedback_location_id INT NOT NULL, feedback_subject VARCHAR(128), feedback_message VARCHAR(4096), FOREIGN KEY (feedback_location_id) REFERENCES location(location_id));
+CREATE TABLE user_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_customer_id INT NOT NULL, feedback_subject VARCHAR(128), feedback_message VARCHAR(4096), FOREIGN KEY (feedback_customer_id) REFERENCES customer(customer_id));
 
 INSERT INTO location(location_name) VALUES ("Porvorim"), ("Panjim"), ("Mapusa");
 INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("Margao"), ("Pernem"), ("Bicholim"), ("Canacona");
 
 ###### SCHEMA CHANGES
 
-CREATE TABLE agency(agency_id int PRIMARY KEY AUTO_INCREMENT, agency_name varchar(256), agency_address varchar(1024), agency_location_id int NOT NULL, agency_contact_person varchar(256), agency_phone_no varchar(16), agency_email_id varchar(128), agency_username varchar(256) UNIQUE NOT NULL, agency_password varchar(4096) UNIQUE NOT NULL, FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
+CREATE TABLE agency(agency_id INT PRIMARY KEY AUTO_INCREMENT, agency_name VARCHAR(256), agency_address VARCHAR(1024), agency_location_id INT NOT NULL, agency_contact_person VARCHAR(256), agency_phone_no VARCHAR(16), agency_email_id VARCHAR(128), agency_username VARCHAR(256) UNIQUE NOT NULL, agency_password VARCHAR(4096) UNIQUE NOT NULL, agency_confirm VARCHAR(16), FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
+
+CREATE TABLE agency_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_date datetime, name VARCHAR(128), phone_no VARCHAR(16), email VARCHAR(128), );
+
+ALTER TABLE user_feedback ADD COLUMN feedback_date datetime;
 
 <br>
 
