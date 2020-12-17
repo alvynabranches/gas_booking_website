@@ -3,6 +3,7 @@
     define('DB_SERVER', 'localhost');define('DB_USERNAME', 'root');define('PASSWORD', '');define('DB', 'gas_booking_system');$con=new mysqli(DB_SERVER,DB_USERNAME,PASSWORD,DB);
     $domestic_gas_price=658;
     $commercial_gas_price=1300;
+    // 
     function console_log($m){echo "<script>console.log('$m')</script>";}
     function console_warn($m){echo "<script>console.warn('$m')</script>";}
     function console_error($m){echo "<script>console.error('$m')</script>";}
@@ -26,6 +27,7 @@
     if($con->connect_error){console_error("Connection failed to mysql");die("Connection failed: ".$con->connect_error);}
     
     // Untested Code
+    // Agency Functionality
     function delivered($b_id){
         exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id");
     }
