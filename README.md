@@ -37,7 +37,7 @@ INSERT INTO location(location_name) VALUES ("Ponda"), ("Valpoi"), ("Vasco"), ("M
 
 ###### SCHEMA CHANGES
 
-CREATE TABLE agency(agency_id int PRIMARY KEY AUTO_INCREMENT, agency_name varchar(256), agency_address varchar(1024), agency_location_id int, agency_contact_person varchar(256), agency_phone_no varchar(16), agency_email_id varchar(128), agency_username varchar(256), agency_password varchar(4096), FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
+CREATE TABLE agency(agency_id int PRIMARY KEY AUTO_INCREMENT, agency_name varchar(256), agency_address varchar(1024), agency_location_id int NOT NULL, agency_contact_person varchar(256), agency_phone_no varchar(16), agency_email_id varchar(128), agency_username varchar(256) UNIQUE NOT NULL, agency_password varchar(4096) UNIQUE NOT NULL, FOREIGN KEY (agency_location_id) REFERENCES location(location_id));
 
 <br>
 
