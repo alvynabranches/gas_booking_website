@@ -28,7 +28,6 @@
     // Untested Code
     function delivered($b_id){
         exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id");
-        $sql=;
     }
 
     function undelivered($b_id){
