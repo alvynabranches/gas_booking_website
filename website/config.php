@@ -45,5 +45,7 @@
     }
 
     // Admin Funtionality
-    function confirm_agency(){}
+    function confirm_agency(){
+        
+    }
 ?>
