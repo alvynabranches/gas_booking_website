@@ -43,4 +43,6 @@
             console_info("Cannot Undelivered");
         }
     }
+
+    function confirm_agency(){}
 ?>
