@@ -44,5 +44,6 @@
         }
     }
 
+    // Admin Funtionality
     function confirm_agency(){}
 ?>
