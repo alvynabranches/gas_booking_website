@@ -13,10 +13,14 @@
     <link rel="stylesheet" href="assets/css/styles.min.css">
     <?php include_once("config.php");redirect('','user-contact-us.php','agency-contact-us.php');?>
 </head>
-
 <body>
     <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button navbar-fixed-top" style="height: 80px;background-color: transparent;color: #ffffff;">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Goa University Gas Agency</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><?php include_once("config.php");echo $company_name;?></a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link d-xl-flex" data-bs-hover-animate="pulse" style="color:#ffffff;" href="index.php"><i class="fa fa-home"></i>&nbsp;Home</a></li>
@@ -45,5 +49,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.min.js"></script>
 </body>
-
 </html>
