@@ -55,6 +55,11 @@
     function agency_logout(){
 
     }
+
+    function get_db_agency_password($a_id){
+
+    }
+
     function delivered($b_id){
         if(exec_query("UPDATE booking SET booking_status='delivered' WHERE booking_id=$b_id;")===TRUE){
             console_info("Delivered Successfully");
@@ -81,6 +86,10 @@
     }
 
     function admin_logout(){
+
+    }
+
+    function get_db_admin_password($a_id){
 
     }
 
