@@ -38,7 +38,7 @@ CREATE TABLE agency(agency_id INT PRIMARY KEY AUTO_INCREMENT, agency_name VARCHA
 
 CREATE TABLE agency_feedback(feedback_id INT PRIMARY KEY AUTO_INCREMENT, feedback_agency_id INT NOT NULL, feedback_date datetime, name VARCHAR(128), phone_no BIGINT, email VARCHAR(128), FOREIGN KEY (feedback_agency_id));
 
-CREATE TABLE admin(admin_id INT PRIMARY KEY AUTO_INCREMENT, admin_name VARCHAR(256) NOT NULL, admin_phone_no BIGINT NOT NULL, username VARCHAR(256), password VARCHAR(4096), );
+CREATE TABLE admin(admin_id INT PRIMARY KEY AUTO_INCREMENT, admin_name VARCHAR(256) NOT NULL, admin_phone_no BIGINT NOT NULL,admin_email_id(256), username VARCHAR(256), password VARCHAR(4096), );
 
 ALTER TABLE user_feedback ADD COLUMN feedback_date datetime NOT NULL;
 ALTER TABLE booking MODIFY customer_location_id INT NOT NULL;
